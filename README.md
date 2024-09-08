@@ -23,15 +23,15 @@ If you want to open, edit or see the Unity project:
 ### Team
 📝 **Designers**
 * Kevin Toninelli: https://github.com/spatagherru / https://spatagherru.itch.io
-* Michele Buonocunto: https://github.com/MicheleBuonocunto / https://michele-buonocunto.itch.io/
+* Michele Buonocunto: https://github.com/MicheleBuonocunto / https://michele-buonocunto.itch.io
 * Mattia Solimeno: https://github.com/mattsoli / https://mattsoli.itch.io
 
 💻 **Programmers**
-* Pietro Di Giovanni: https://github.com/piedg / https://irafunesta.itch.io
-* Diego Gurrieri: https://github.com/diegogurr / 
+* Pietro Di Giovanni: https://github.com/piedg / https://hcyan.itch.io
+* Diego Gurrieri: https://github.com/diegogurr / https://diegogu.itch.io
 
 🎨 **2D Artist**
-* Lorenzo Racca: https://github.com/LorenzoRacca97 / 
+* Lorenzo Racca: https://github.com/LorenzoRacca97 / https://lorenzo-racca.itch.io
 
 🎹 **Composer**
 * Claudio Monteleone: https://github.com/ForgottenDawn / https://forgottendawn.itch.io
