@@ -1,22 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(InputController))]
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] InputController inputController;
-
     [SerializeField, Range(0, 25)] float moveSpeed = 5f;
-    Vector2 position;
-    bool isFacingRight = true;
+
+    private Vector2 position;
+    private bool isFacingRight = true;
+
+    private InputController inputController;
+    private Rigidbody2D rigidBody;
 
     private void Awake()
     {
         inputController = GetComponent<InputController>();
+        rigidBody = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    private void Start()
+    {
+        SetRigidbody2DSettings();
+    }
+
+    void FixedUpdate()
     {
         position.x = inputController.MovementValue.x;
         position.y = inputController.MovementValue.y;
@@ -27,7 +35,7 @@ public class Player : MonoBehaviour
 
     private void Move(Vector2 direction)
     {
-        transform.Translate(direction.normalized * moveSpeed * Time.deltaTime);
+        rigidBody.MovePosition(rigidBody.position + direction * moveSpeed * Time.fixedDeltaTime);
     }
 
     private void HandleFlip(Vector2 direction)
@@ -49,5 +57,13 @@ public class Player : MonoBehaviour
         Vector3 scaler = transform.localScale;
         scaler.x *= -1;
         transform.localScale = scaler;
+    }
+
+    private void SetRigidbody2DSettings()
+    {
+        rigidBody.freezeRotation = true;
+        rigidBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        rigidBody.gravityScale = 0;
+        rigidBody.angularDrag = 0;
     }
 }
