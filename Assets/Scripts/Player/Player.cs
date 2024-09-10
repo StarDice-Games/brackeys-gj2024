@@ -8,20 +8,25 @@ public class Player : MonoBehaviour
     [SerializeField, Range(0, 25)] float moveSpeed = 5f;
 
     private Vector2 position;
+    private Vector2 lastPosition;
+
     private bool isFacingRight = true;
 
     private InputController inputController;
     private Rigidbody2D rigidBody;
+    private ObjectGrabber objectGrabber;
 
     private void Awake()
     {
         inputController = GetComponent<InputController>();
+        objectGrabber = GetComponent<ObjectGrabber>();
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
     private void Start()
     {
         SetRigidbody2DSettings();
+        inputController.grabAction += HandleGrab; 
     }
 
     void FixedUpdate()
@@ -29,6 +34,7 @@ public class Player : MonoBehaviour
         position.x = inputController.MovementValue.x;
         position.y = inputController.MovementValue.y;
 
+        SetLastPosition();
         Move(position);
         HandleFlip(position);
     }
@@ -36,6 +42,19 @@ public class Player : MonoBehaviour
     private void Move(Vector2 direction)
     {
         rigidBody.MovePosition(rigidBody.position + direction * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    private void SetLastPosition()
+    {
+        if (position != Vector2.zero) 
+        {
+            lastPosition = position;
+        }
+    }
+
+    private void HandleGrab() 
+    {
+        objectGrabber.Grab(lastPosition);
     }
 
     private void HandleFlip(Vector2 direction)
