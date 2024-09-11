@@ -504,11 +504,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4975920788393732507, guid: c74df2ad9ceb6b14f987a568ed65c326, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.597
+      value: 1.61
       objectReference: {fileID: 0}
     - target: {fileID: 4975920788393732507, guid: c74df2ad9ceb6b14f987a568ed65c326, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.008
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4975920788393732507, guid: c74df2ad9ceb6b14f987a568ed65c326, type: 3}
       propertyPath: m_LocalPosition.z
@@ -695,11 +695,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4975920788393732507, guid: c74df2ad9ceb6b14f987a568ed65c326, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.75
+      value: -1.72
       objectReference: {fileID: 0}
     - target: {fileID: 4975920788393732507, guid: c74df2ad9ceb6b14f987a568ed65c326, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.68
+      value: -1.01
       objectReference: {fileID: 0}
     - target: {fileID: 4975920788393732507, guid: c74df2ad9ceb6b14f987a568ed65c326, type: 3}
       propertyPath: m_LocalPosition.z
@@ -796,8 +796,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.39, y: -0.39, z: -0.038781}
-  m_LocalScale: {x: 1.9281, y: 1.9281, z: 1.9281}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -814,6 +814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSO: {fileID: 11400000, guid: 4742f95d1a1adc842a367e3efc67e8a0, type: 2}
+  spriteRenderer: {fileID: 0}
 --- !u!61 &1365546755
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -901,7 +902,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.6132076, g: 0.078097194, b: 0.078097194, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

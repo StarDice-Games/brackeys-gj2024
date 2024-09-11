@@ -20,8 +20,8 @@ public class ItemSO : ScriptableObject
     [SerializeField] string itemName;
     public string ItemName { get => itemName; }
 
-    [SerializeField] SpriteRenderer sprite;
-    public SpriteRenderer Sprite { get => sprite; }
+    [SerializeField] Sprite interactedSprite;
+    public Sprite InteractedSprite { get => interactedSprite; }
 
     [SerializeField] eItemType itemType;
     public eItemType ItemType { get => itemType; }

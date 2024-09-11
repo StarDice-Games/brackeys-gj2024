@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Plate
   m_EditorClassIdentifier: 
   itemName: Plate
-  sprite: {fileID: 0}
+  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  interactedSprite: {fileID: 0}
   itemType: 0
   interactionType: 1

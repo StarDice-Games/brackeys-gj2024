@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Blood
   m_EditorClassIdentifier: 
   itemName: Blood
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 93c583b613eb14e4ab81f58ead3c3ff7, type: 3}
+  interactedSprite: {fileID: 21300000, guid: 8b2b70eb76852c14992a1d07024685b5, type: 3}
   itemType: 0
   interactionType: 0
