@@ -9,9 +9,15 @@ public enum eInteractionType
 public enum eItemType
 {
     None,
+    BloodStain,
+    Paint,
+    Carpet,
+    Couch,
+    Door,
+    Plant,
+    DirtyClothes,
+    Pillows,
     Dishes,
-    Laundry,
-    Blood
 }
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Items/New Item")]
