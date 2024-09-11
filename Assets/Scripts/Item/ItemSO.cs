@@ -1,15 +1,17 @@
 using UnityEngine;
 
-public enum eItemInteractionType
+public enum eInteractionType
 {
     Static,
-    Moveable
+    Grabbable
 }
 
 public enum eItemType
 {
+    None,
     Dishes,
-    Laundry
+    Laundry,
+    Blood
 }
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Items/New Item")]
@@ -22,5 +24,8 @@ public class ItemSO : ScriptableObject
     public SpriteRenderer Sprite { get => sprite; }
 
     [SerializeField] eItemType itemType;
-    internal eItemType ItemType { get => itemType; }
+    public eItemType ItemType { get => itemType; }
+
+    [SerializeField] eInteractionType interactionType;
+    public eInteractionType InteractionType { get => interactionType; }
 }

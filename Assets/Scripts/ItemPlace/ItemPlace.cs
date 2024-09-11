@@ -12,6 +12,8 @@ public class ItemPlace : MonoBehaviour
 
     [SerializeField] Color greenColor, redColor;
 
+    [SerializeField] GameObject inputPopup;
+
     public eItemType ItemType { get => itemType; }
 
     public bool CanAttachItem()
@@ -33,6 +35,7 @@ public class ItemPlace : MonoBehaviour
             {
                 if (interactor.GrabbedItem)
                 {
+                    inputPopup.SetActive(true);
                     CheckItemTypeMatch(interactor.GrabbedItem);
                 }
             }
@@ -41,7 +44,11 @@ public class ItemPlace : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        HideCheckItemSprite();
+        if (collision.CompareTag("Player"))
+        {
+            HideCheckItemSprite();
+            inputPopup.SetActive(false);
+        }
     }
 
     public void HideCheckItemSprite()
@@ -59,6 +66,7 @@ public class ItemPlace : MonoBehaviour
             if (item.ItemSO.ItemType == ItemType)
             {
                 sprite.color = greenColor;
+                inputPopup.SetActive(true);
             }
             else
             {

@@ -17,7 +17,6 @@ public class Interactor : MonoBehaviour
     [SerializeField]
     private LayerMask layerMask;
 
-
     public void Interact(Vector2 vectorDirection)
     {
         Debug.DrawRay(rayPoint.position, vectorDirection * interactDistance, Color.green, 3f);
@@ -25,11 +24,11 @@ public class Interactor : MonoBehaviour
 
         if (hitInfo.collider != null)
         {
-            // Interact with a grabblable item
+            // Interact with an item
             if (hitInfo.collider.TryGetComponent(out Item item))
             {
+                // if Grabbable
                 // Pick up item
-
                 // Check if Player has no Item in hand
                 if (grabbedItem == null)
                 {
@@ -40,6 +39,12 @@ public class Interactor : MonoBehaviour
                         grabbedItem.transform.position = grabPoint.position;
                         grabbedItem.transform.SetParent(transform);
                     }
+                }
+
+                // if Static
+                if (item)
+                {
+                    item.Interact();
                 }
             }
 
