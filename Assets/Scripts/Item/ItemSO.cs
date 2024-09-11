@@ -1,9 +1,15 @@
 using UnityEngine;
 
-public enum eItemType
+public enum eItemInteractionType
 {
     Static,
     Moveable
+}
+
+public enum eItemType
+{
+    Dishes,
+    Laundry
 }
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Items/New Item")]

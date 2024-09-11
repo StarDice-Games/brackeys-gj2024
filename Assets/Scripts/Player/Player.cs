@@ -14,19 +14,19 @@ public class Player : MonoBehaviour
 
     private InputController inputController;
     private Rigidbody2D rigidBody;
-    private ObjectGrabber objectGrabber;
+    private Interactor interactor;
 
     private void Awake()
     {
         inputController = GetComponent<InputController>();
-        objectGrabber = GetComponent<ObjectGrabber>();
+        interactor = GetComponent<Interactor>();
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
     private void Start()
     {
         SetRigidbody2DSettings();
-        inputController.grabAction += HandleGrab; 
+        inputController.Interact += HandleInteract; 
     }
 
     void FixedUpdate()
@@ -52,9 +52,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void HandleGrab() 
+    private void HandleInteract() 
     {
-        objectGrabber.Grab(lastPosition);
+        interactor.Interact(lastPosition);
     }
 
     private void HandleFlip(Vector2 direction)

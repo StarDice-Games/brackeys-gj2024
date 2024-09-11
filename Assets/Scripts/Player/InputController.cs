@@ -6,7 +6,7 @@ public class InputController : MonoBehaviour, Controls.IPlayerActions
 {
     public Vector2 MovementValue { get; private set; }
 
-    public event Action grabAction;
+    public event Action Interact;
 
     private Controls controls;
 
@@ -33,6 +33,6 @@ public class InputController : MonoBehaviour, Controls.IPlayerActions
         if (!context.performed)
             return;
 
-        grabAction?.Invoke();
+        Interact?.Invoke();
     }
 }
