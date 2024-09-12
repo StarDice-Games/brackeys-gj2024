@@ -9,7 +9,7 @@ public enum TaskType
 
 public abstract class Task : MonoBehaviour
 {
-    public string taskName;
+    [HideInInspector]
     public TaskType taskType;
 
     public delegate void TaskCompleted(Task task);
@@ -21,7 +21,7 @@ public abstract class Task : MonoBehaviour
 
     protected void CompleteTask()
     {
-        Debug.Log($"Task completed: {taskName}");
+        Debug.Log("Task completed");
         OnTaskCompleted?.Invoke(this);
     }
 }

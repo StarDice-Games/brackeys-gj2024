@@ -1,28 +1,28 @@
-using System.Collections.Generic;
+using UnityEngine;
 
 public class InteractionTask : Task
 {
-    private List<IInteractable> interactables;
+    [SerializeField] private GameObject interactableGameObject;
+    private IInteractable interactable;
 
     private void Start()
     {
         taskType = TaskType.Interaction;
-        interactables = new List<IInteractable>(GetComponentsInChildren<IInteractable>()); // Get children tasks
+
+        if (interactableGameObject.TryGetComponent(out IInteractable interactableComponent))
+        {
+            interactable = interactableComponent;
+
+            if (interactableGameObject.TryGetComponent(out Item item))
+            {
+                item.associatedTask = this;
+            }
+        }
     }
 
     public override void CheckCompletion()
     {
-        bool allCompleted = true;
-        foreach (var interactable in interactables)
-        {
-            if (!interactable.IsCompleted())
-            {
-                allCompleted = false;
-                break;
-            }
-        }
-
-        if (allCompleted)
+        if (interactable != null && interactable.IsCompleted())
         {
             CompleteTask();
         }
@@ -30,13 +30,6 @@ public class InteractionTask : Task
 
     public override bool IsCompleted()
     {
-        foreach (var interactable in interactables)
-        {
-            if (!interactable.IsCompleted())
-            {
-                return false;
-            }
-        }
-        return true;
+        return interactable != null && interactable.IsCompleted();
     }
 }

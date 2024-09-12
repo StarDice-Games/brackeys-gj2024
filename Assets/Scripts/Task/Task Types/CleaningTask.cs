@@ -1,28 +1,28 @@
-using System.Collections.Generic;
+using UnityEngine;
 
 public class CleaningTask : Task
 {
-    private List<IInteractable> dirtObjects;
+    [SerializeField] private GameObject cleanableGameObject;
+    private IInteractable cleanable;
 
     private void Start()
     {
         taskType = TaskType.Cleaning;
-        dirtObjects = new List<IInteractable>(GetComponentsInChildren<IInteractable>());
+
+        if (cleanableGameObject.TryGetComponent(out IInteractable cleanableComponent))
+        {
+            cleanable = cleanableComponent;
+
+            if (cleanableGameObject.TryGetComponent(out Item item))
+            {
+                item.associatedTask = this;
+            }
+        }
     }
 
     public override void CheckCompletion()
     {
-        bool allCleaned = true;
-        foreach (var dirt in dirtObjects)
-        {
-            if (!dirt.IsCompleted())
-            {
-                allCleaned = false;
-                break;
-            }
-        }
-
-        if (allCleaned)
+        if (cleanable != null && cleanable.IsCompleted())
         {
             CompleteTask();
         }
@@ -30,13 +30,6 @@ public class CleaningTask : Task
 
     public override bool IsCompleted()
     {
-        foreach (var dirt in dirtObjects)
-        {
-            if (!dirt.IsCompleted())
-            {
-                return false;
-            }
-        }
-        return true;
+        return cleanable != null && cleanable.IsCompleted();
     }
 }

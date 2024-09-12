@@ -10,8 +10,9 @@ public class Item : MonoBehaviour, IInteractable
     private bool isGrabbable;
     public bool IsGrabbable { get => isGrabbable; set => isGrabbable = value; }
 
-    private bool completed = false; 
+    private bool completed = false;
 
+    [HideInInspector]
     public Task associatedTask;
 
     private void Awake()

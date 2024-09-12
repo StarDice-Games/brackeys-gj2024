@@ -2,17 +2,23 @@ using UnityEngine;
 
 public class PlacementTask : Task
 {
-    public Item itemToPlace;
-    public Transform targetPosition;
+    [SerializeField] private Item itemToPlace;
+    [SerializeField] private Transform targetPosition;
+    [SerializeField] private float placementTolerance = 0.5f;
 
     private void Start()
     {
         taskType = TaskType.Placement;
+
+        if (itemToPlace != null)
+        {
+            itemToPlace.associatedTask = this;
+        }
     }
 
     public override void CheckCompletion()
     {
-        if (Vector3.Distance(itemToPlace.transform.position, targetPosition.position) < 0.5f)
+        if (Vector3.Distance(itemToPlace.transform.position, targetPosition.position) < placementTolerance)
         {
             CompleteTask();
         }
@@ -20,6 +26,6 @@ public class PlacementTask : Task
 
     public override bool IsCompleted()
     {
-        return Vector3.Distance(itemToPlace.transform.position, targetPosition.position) < 0.5f;
+        return Vector3.Distance(itemToPlace.transform.position, targetPosition.position) < placementTolerance;
     }
 }
