@@ -1755,10 +1755,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2676027017493190875, guid: 33d967fdd4da52e44b2d12c7554358c9, type: 3}
-      propertyPath: childToFlip
-      value: 
-      objectReference: {fileID: 5551358042174126511}
     - target: {fileID: 4448472719234281166, guid: 33d967fdd4da52e44b2d12c7554358c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.314
@@ -1808,11 +1804,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33d967fdd4da52e44b2d12c7554358c9, type: 3}
---- !u!4 &5551358042174126511 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2289399412775500048, guid: 33d967fdd4da52e44b2d12c7554358c9, type: 3}
-  m_PrefabInstance: {fileID: 5551358042174126510}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7172879368473944278
 PrefabInstance:
   m_ObjectHideFlags: 0

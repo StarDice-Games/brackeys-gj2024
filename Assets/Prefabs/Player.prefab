@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  childToFlip: {fileID: 2289399412775500048}
 --- !u!114 &6576259475664344627
 MonoBehaviour:
   m_ObjectHideFlags: 0
