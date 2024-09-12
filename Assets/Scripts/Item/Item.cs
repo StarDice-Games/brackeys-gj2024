@@ -10,6 +10,8 @@ public class Item : MonoBehaviour, IInteractable
     bool isGrabbable;
     public bool IsGrabbable { get => isGrabbable; set => isGrabbable = value; }
 
+    private bool completed = false;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -29,6 +31,13 @@ public class Item : MonoBehaviour, IInteractable
         {
             Debug.Log("Interact with a static Object");
             spriteRenderer.sprite = itemSO.InteractedSprite;
+
+            //completed = true; //To be defined
         }
+    }
+
+    public bool IsCompleted()
+    {
+        return completed;
     }
 }
