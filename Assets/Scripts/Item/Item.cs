@@ -9,6 +9,7 @@ public class Item : MonoBehaviour, IInteractable
 
     private bool isGrabbable;
     public bool IsGrabbable { get => isGrabbable; set => isGrabbable = value; }
+    public bool IsInteractable { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
     private bool completed = false;
 
@@ -61,11 +62,11 @@ public class Item : MonoBehaviour, IInteractable
         }
     }
 
-    private void GrabObject()
+    private void GrabObject() // Not used
     {
         if (!completed)
         {
-            Debug.Log("Grabbing the object.");
+            Debug.Log("Grabbing the object."); 
             completed = true;
         }
     }
@@ -82,5 +83,20 @@ public class Item : MonoBehaviour, IInteractable
     public bool IsCompleted()
     {
         return completed;
+    }
+
+    public void HoverInteract()
+    {
+
+    }
+
+    public void ExitInteract()
+    {
+
+    }
+
+    public Transform GetTransform()
+    {
+        return gameObject.transform;
     }
 }
