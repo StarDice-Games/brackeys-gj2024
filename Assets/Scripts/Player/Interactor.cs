@@ -66,6 +66,13 @@ public class Interactor : MonoBehaviour
 
                             // Remove placed item from Player
                             grabbedItem.transform.SetParent(null);
+
+                            // Notify that object has been placed correctly
+                            if (grabbedItem.associatedTask != null)
+                            {
+                                grabbedItem.associatedTask.CheckCompletion();
+                            }
+
                             grabbedItem = null;
 
                             return;

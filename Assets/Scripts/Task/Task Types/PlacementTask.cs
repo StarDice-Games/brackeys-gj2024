@@ -12,7 +12,7 @@ public class PlacementTask : Task
 
     public override void CheckCompletion()
     {
-        if (Vector3.Distance(itemToPlace.transform.position, targetPosition.position) < 0.1f)
+        if (Vector3.Distance(itemToPlace.transform.position, targetPosition.position) < 0.5f)
         {
             CompleteTask();
         }
@@ -20,6 +20,6 @@ public class PlacementTask : Task
 
     public override bool IsCompleted()
     {
-        return Vector3.Distance(itemToPlace.transform.position, targetPosition.position) < 0.1f;
+        return Vector3.Distance(itemToPlace.transform.position, targetPosition.position) < 0.5f;
     }
 }

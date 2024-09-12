@@ -7,10 +7,12 @@ public class Item : MonoBehaviour, IInteractable
 
     [SerializeField] SpriteRenderer spriteRenderer;
 
-    bool isGrabbable;
+    private bool isGrabbable;
     public bool IsGrabbable { get => isGrabbable; set => isGrabbable = value; }
 
-    private bool completed = false;
+    private bool completed = false; 
+
+    public Task associatedTask;
 
     private void Awake()
     {
@@ -27,12 +29,52 @@ public class Item : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (itemSO.InteractionType == eInteractionType.Static)
+        switch (itemSO.InteractionType)
         {
-            Debug.Log("Interact with a static Object");
-            spriteRenderer.sprite = itemSO.InteractedSprite;
+            case eInteractionType.Static:
+                InteractWithStaticObject();
+                break;
 
-            //completed = true; //To be defined
+            case eInteractionType.Grabbable:
+                GrabObject();
+                break;
+
+            case eInteractionType.Cleanable:
+                CleanObject();
+                break;
+        }
+
+        if (associatedTask != null)
+        {
+            associatedTask.CheckCompletion();
+        }
+    }
+
+    private void InteractWithStaticObject()
+    {
+        if (!completed)
+        {
+            Debug.Log("Interacting with a static object.");
+            spriteRenderer.sprite = itemSO.InteractedSprite;
+            completed = true;
+        }
+    }
+
+    private void GrabObject()
+    {
+        if (!completed)
+        {
+            Debug.Log("Grabbing the object.");
+            completed = true;
+        }
+    }
+
+    private void CleanObject()
+    {
+        if (!completed)
+        {
+            Debug.Log("Cleaning the object.");
+            completed = true;
         }
     }
 

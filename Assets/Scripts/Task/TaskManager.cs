@@ -4,28 +4,46 @@ using UnityEngine;
 public class TaskManager : MonoBehaviour
 {
     [SerializeField]
-    private List<Task> allTasks;
+    private List<Task> initialTasks;
+    [SerializeField]
+    private Task finalTask;
+
+    private bool initialTasksCompleted = false;
 
     void Start()
     {
-        Task.OnTaskCompleted += CheckAllTasksCompleted;
+        Task.OnTaskCompleted += CheckTasksCompletion;
     }
 
-    private void CheckAllTasksCompleted(Task completedTask)
+    private void CheckTasksCompletion(Task completedTask)
     {
-        bool allTasksCompleted = true;
-        foreach (var task in allTasks)
+        if (!initialTasksCompleted)
         {
-            if (!task.IsCompleted())
+            bool allInitialTasksCompleted = true;
+            foreach (var task in initialTasks)
             {
-                allTasksCompleted = false;
-                break;
+                if (!task.IsCompleted())
+                {
+                    allInitialTasksCompleted = false;
+                    break;
+                }
+            }
+
+            if (allInitialTasksCompleted)
+            {
+                Debug.Log("All initial task completed");
+            }
+
+            if (allInitialTasksCompleted&&finalTask)
+            {
+                initialTasksCompleted = true;
+                finalTask.gameObject.SetActive(true);
             }
         }
 
-        if (allTasksCompleted)
+        if (initialTasksCompleted && finalTask.IsCompleted())
         {
-            Debug.Log("All tasks completed!");
+            Debug.Log("All tasks completed! Game complete.");
         }
     }
 }
