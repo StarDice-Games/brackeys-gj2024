@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private InputController inputController;
     private Rigidbody2D rigidBody;
     private Interactor interactor;
+    private InteractionDetector interactorDetector;
 
     public Vector2 LastPosition { get => lastPosition; }
 
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
         inputController = GetComponent<InputController>();
         interactor = GetComponent<Interactor>();
         rigidBody = GetComponent<Rigidbody2D>();
+        interactorDetector = GetComponent<InteractionDetector>();
     }
 
     private void Start()
@@ -56,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleInteract()
     {
-        interactor.Interact(lastPosition);
+        interactorDetector.Interact();
     }
 
     private void HandleFlip(Vector2 direction)
