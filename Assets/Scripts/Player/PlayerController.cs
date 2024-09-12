@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move(Vector2 direction)
     {
-        rigidBody.MovePosition(rigidBody.position + direction * moveSpeed * Time.fixedDeltaTime);
+        rigidBody.MovePosition(rigidBody.position + moveSpeed * Time.fixedDeltaTime * direction);
     }
 
     private void SetLastPosition()
