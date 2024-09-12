@@ -23,6 +23,22 @@ public class Item : MonoBehaviour, IInteractable
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player"))
+        {
+            Debug.Log("Player here");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Debug.Log("Player exit from here");
+        }
+    }
+
     public void Interact()
     {
         if (itemSO.InteractionType == eInteractionType.Static)

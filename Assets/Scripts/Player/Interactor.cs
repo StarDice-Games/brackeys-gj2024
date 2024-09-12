@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Interactor : MonoBehaviour
 {
+    PlayerController player;
+
     [SerializeField]
     private Transform grabPoint;
 
@@ -17,41 +19,59 @@ public class Interactor : MonoBehaviour
     [SerializeField]
     private LayerMask layerMask;
 
+    GameObject currentItem;
+
+    private void Awake()
+    {
+        player = GetComponent<PlayerController>();
+    }
+
+    private void Update()
+    {
+        Debug.DrawRay(rayPoint.position, player.LastPosition * interactDistance, Color.blue, 0.1f);
+        RaycastHit2D hitInfo = Physics2D.Raycast(rayPoint.position, player.LastPosition, interactDistance, layerMask);
+
+        if (hitInfo.collider)
+        {
+            currentItem = hitInfo.collider.gameObject;
+        }
+        else
+        {
+            currentItem = null;
+        }
+
+        Debug.Log(currentItem);
+    }
+
     public void Interact(Vector2 vectorDirection)
     {
-        Debug.DrawRay(rayPoint.position, vectorDirection * interactDistance, Color.green, 3f);
-        RaycastHit2D hitInfo = Physics2D.Raycast(rayPoint.position, vectorDirection, interactDistance, layerMask);
-
-        if (hitInfo.collider != null)
+        if (currentItem)
         {
-            // Interact with an item
-            if (hitInfo.collider.TryGetComponent(out Item item))
+            if (grabbedItem == null)
             {
-                // if Grabbable
-                // Pick up item
-                // Check if Player has no Item in hand
-                if (grabbedItem == null)
+                // Interact with an item
+                if (currentItem.TryGetComponent(out Item item))
                 {
                     // Check if the item is grabbable
                     if (item.IsGrabbable)
                     {
+                        // Pick up item
                         grabbedItem = item;
                         grabbedItem.transform.position = grabPoint.position;
                         grabbedItem.transform.SetParent(transform);
                     }
-                }
-
-                // if Static
-                if (item)
-                {
-                    item.Interact();
+                    else // Static item
+                    {
+                        item.Interact();
+                    }
                 }
             }
 
             // Interact with an item place area
-            if (hitInfo.collider.TryGetComponent(out ItemPlace itemPlace))
+            if (currentItem.TryGetComponent(out ItemPlace itemPlace))
             {
-                if (grabbedItem != null)
+                // check if Player has Item in hand
+                if (grabbedItem)
                 {
                     if (itemPlace.CanAttachItem())
                     {

@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(InputController))]
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [SerializeField, Range(0, 25)] float moveSpeed = 5f;
 
@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rigidBody;
     private Interactor interactor;
 
+    public Vector2 LastPosition { get => lastPosition; }
+
     private void Awake()
     {
         inputController = GetComponent<InputController>();
@@ -26,7 +28,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         SetRigidbody2DSettings();
-        inputController.Interact += HandleInteract; 
+        inputController.Interact += HandleInteract;
     }
 
     void FixedUpdate()
@@ -46,13 +48,13 @@ public class Player : MonoBehaviour
 
     private void SetLastPosition()
     {
-        if (position != Vector2.zero) 
+        if (position != Vector2.zero)
         {
             lastPosition = position;
         }
     }
 
-    private void HandleInteract() 
+    private void HandleInteract()
     {
         interactor.Interact(lastPosition);
     }
