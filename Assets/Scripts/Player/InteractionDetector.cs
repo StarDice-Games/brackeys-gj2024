@@ -120,7 +120,7 @@ public class InteractionDetector : MonoBehaviour
             grabbedItem = item;
             grabbedItem.GetComponent<BoxCollider2D>().enabled = false;
             grabbedItem.transform.position = grabPoint.position;
-            grabbedItem.transform.SetParent(transform);
+            grabbedItem.transform.SetParent(grabPoint);
         }
     }
 

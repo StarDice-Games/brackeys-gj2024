@@ -36,7 +36,7 @@ public class ItemPlace : MonoBehaviour, IInteractable
 
         if (collision.CompareTag("InteractionDetector"))
         {
-            if (collision.transform.parent.TryGetComponent(out InteractionDetector interactorDetector))
+            if (collision.transform.parent.parent.TryGetComponent(out InteractionDetector interactorDetector))
             {
                 if (interactorDetector.GrabbedItem)
                 {
