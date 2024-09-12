@@ -40,7 +40,7 @@ public class ItemPlace : MonoBehaviour, IInteractable
             {
                 if (interactorDetector.GrabbedItem)
                 {
-                    CheckItemTypeMatch(interactorDetector.GrabbedItem);
+                    UpdateVisual(interactorDetector.GrabbedItem);
                 }
             }
         }
@@ -62,7 +62,7 @@ public class ItemPlace : MonoBehaviour, IInteractable
         }
     }
 
-    public void CheckItemTypeMatch(Item item)
+    public void UpdateVisual(Item item)
     {
         if (anchorPoint.TryGetComponent(out SpriteRenderer sprite))
         {
@@ -75,6 +75,11 @@ public class ItemPlace : MonoBehaviour, IInteractable
                 sprite.color = redColor;
             }
         }
+    }
+
+    public bool CheckItemTypeMatch(Item item)
+    {
+        return item.ItemSO.ItemType == ItemType;
     }
 
     public void Interact()

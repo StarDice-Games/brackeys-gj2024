@@ -77,7 +77,7 @@ public class InteractionDetector : MonoBehaviour
                     }
                     else if (currentObject.TryGetComponent(out ItemPlace itemPlace))
                     {
-                        if (grabbedItem && itemPlace.CanAttachItem())
+                        if (grabbedItem && itemPlace.CanAttachItem() && itemPlace.CheckItemTypeMatch(grabbedItem))
                         {
                             nearestInteractable.HoverInteract();
                             OnHoverInteraction?.Invoke();
