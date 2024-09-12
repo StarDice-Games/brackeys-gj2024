@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemPlace : MonoBehaviour
+public class ItemPlace : MonoBehaviour, IInteractable
 {
     [SerializeField] eItemType itemType;
     [SerializeField] Transform anchorPoint;
@@ -12,9 +12,8 @@ public class ItemPlace : MonoBehaviour
 
     [SerializeField] Color greenColor, redColor;
 
-    [SerializeField] GameObject inputPopup;
-
     public eItemType ItemType { get => itemType; }
+    public bool IsInteractable { get; set; }
 
     public bool CanAttachItem()
     {
@@ -29,14 +28,19 @@ public class ItemPlace : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (!CanAttachItem())
         {
-            if (collision.TryGetComponent(out Interactor interactor))
+            HideCheckItemSprite();
+            return;
+        }
+
+        if (collision.CompareTag("InteractionDetector"))
+        {
+            if (collision.transform.parent.parent.TryGetComponent(out InteractionDetector interactorDetector))
             {
-                if (interactor.GrabbedItem)
+                if (interactorDetector.GrabbedItem)
                 {
-                    inputPopup.SetActive(true);
-                    CheckItemTypeMatch(interactor.GrabbedItem);
+                    UpdateVisual(interactorDetector.GrabbedItem);
                 }
             }
         }
@@ -44,10 +48,9 @@ public class ItemPlace : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("InteractionDetector"))
         {
             HideCheckItemSprite();
-            inputPopup.SetActive(false);
         }
     }
 
@@ -59,14 +62,13 @@ public class ItemPlace : MonoBehaviour
         }
     }
 
-    public void CheckItemTypeMatch(Item item)
+    public void UpdateVisual(Item item)
     {
         if (anchorPoint.TryGetComponent(out SpriteRenderer sprite))
         {
             if (item.ItemSO.ItemType == ItemType)
             {
                 sprite.color = greenColor;
-                inputPopup.SetActive(true);
             }
             else
             {
@@ -74,4 +76,28 @@ public class ItemPlace : MonoBehaviour
             }
         }
     }
+
+    public bool CheckItemTypeMatch(Item item)
+    {
+        return item.ItemSO.ItemType == ItemType;
+    }
+
+    public void Interact()
+    {
+    }
+
+    public void HoverInteract()
+    {
+    }
+
+    public void ExitInteract()
+    {
+    }
+
+    public Transform GetTransform()
+    {
+        return gameObject.transform;
+    }
+
+
 }

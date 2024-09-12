@@ -3,9 +3,11 @@ using UnityEngine;
 [RequireComponent(typeof(InputController))]
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [SerializeField, Range(0, 25)] float moveSpeed = 5f;
+
+    [SerializeField] Transform childToFlip;
 
     private Vector2 position;
     private Vector2 lastPosition;
@@ -14,19 +16,21 @@ public class Player : MonoBehaviour
 
     private InputController inputController;
     private Rigidbody2D rigidBody;
-    private Interactor interactor;
+    private InteractionDetector interactorDetector;
+
+    public Vector2 LastPosition { get => lastPosition; }
 
     private void Awake()
     {
         inputController = GetComponent<InputController>();
-        interactor = GetComponent<Interactor>();
         rigidBody = GetComponent<Rigidbody2D>();
+        interactorDetector = GetComponent<InteractionDetector>();
     }
 
     private void Start()
     {
         SetRigidbody2DSettings();
-        inputController.Interact += HandleInteract; 
+        inputController.Interact += HandleInteract;
     }
 
     void FixedUpdate()
@@ -46,15 +50,15 @@ public class Player : MonoBehaviour
 
     private void SetLastPosition()
     {
-        if (position != Vector2.zero) 
+        if (position != Vector2.zero)
         {
             lastPosition = position;
         }
     }
 
-    private void HandleInteract() 
+    private void HandleInteract()
     {
-        interactor.Interact(lastPosition);
+        interactorDetector.Interact();
     }
 
     private void HandleFlip(Vector2 direction)
@@ -73,9 +77,9 @@ public class Player : MonoBehaviour
     {
         isFacingRight = !isFacingRight;
 
-        Vector3 scaler = transform.localScale;
+        Vector3 scaler = childToFlip.localScale;
         scaler.x *= -1;
-        transform.localScale = scaler;
+        childToFlip.localScale = scaler;
     }
 
     private void SetRigidbody2DSettings()

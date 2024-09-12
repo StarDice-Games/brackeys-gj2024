@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7480faeb7e4c704aacd000ec8c6a8ed, type: 3}
-  m_Name: Blood
+  m_Name: 3_Carpet
   m_EditorClassIdentifier: 
-  itemName: Blood
-  sprite: {fileID: 21300000, guid: 93c583b613eb14e4ab81f58ead3c3ff7, type: 3}
-  interactedSprite: {fileID: 21300000, guid: 8b2b70eb76852c14992a1d07024685b5, type: 3}
-  itemType: 0
+  itemName: Carpet
+  interactedSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  itemType: 3
   interactionType: 0

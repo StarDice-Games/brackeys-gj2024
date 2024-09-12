@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7480faeb7e4c704aacd000ec8c6a8ed, type: 3}
-  m_Name: Plate
+  m_Name: 2_Paint
   m_EditorClassIdentifier: 
-  itemName: Plate
-  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  interactedSprite: {fileID: 0}
-  itemType: 0
-  interactionType: 1
+  itemName: Paint
+  interactedSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  itemType: 2
+  interactionType: 0
