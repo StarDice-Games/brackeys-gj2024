@@ -32,4 +32,14 @@ public class InteractionTask : Task
     {
         return interactable != null && interactable.IsCompleted();
     }
+
+    public override int GetCompletedObjectives()
+    {
+        return interactable != null && interactable.IsCompleted() ? 1 : 0;
+    }
+
+    public override int GetTotalObjectives()
+    {
+        return 1;
+    }
 }

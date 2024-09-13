@@ -58,4 +58,19 @@ public class TaskManager : MonoBehaviour
             Debug.Log("All tasks completed! Game complete.");
         }
     }
+
+    public List<Task> GetAllTasks()
+    {
+        List<Task> allTasks = new List<Task>();
+        allTasks.AddRange(initialTasks);
+
+        if (finalTaskWelcomeGuest != null)
+            allTasks.Add(finalTaskWelcomeGuest);
+
+        if (finalTaskDinner != null)
+            allTasks.Add(finalTaskDinner);
+
+        return allTasks;
+    }
+
 }
