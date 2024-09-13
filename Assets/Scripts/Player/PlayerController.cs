@@ -40,9 +40,7 @@ public class PlayerController : MonoBehaviour
         position.x = inputController.MovementValue.x;
         position.y = inputController.MovementValue.y;
 
-
-        animator.SetBool("isWalking", position != Vector2.zero);
-
+        animator.SetBool("isWalking", IsPlayerMoving());
 
         SetLastPosition();
         Move(position);
@@ -56,10 +54,15 @@ public class PlayerController : MonoBehaviour
 
     private void SetLastPosition()
     {
-        if (position != Vector2.zero)
+        if (IsPlayerMoving())
         {
             lastPosition = position;
         }
+    }
+
+    private bool IsPlayerMoving()
+    {
+        return position != Vector2.zero;
     }
 
     private void HandleInteract()
