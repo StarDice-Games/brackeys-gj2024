@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -19,6 +21,8 @@ public class EventsManager : MonoBehaviour
     [Header("Guests")]
     [SerializeField] List<GameObject> guests;
     [SerializeField] List<Transform> guestSpawnPoints;
+
+    [SerializeField] float timeBetweenEvents = 5f;
 
     public UnityEvent OnStartGame, OnMainTaskCompleted, OnDoorOpen, OnGuestsEnter, OnSecondPhase;
 
@@ -42,18 +46,22 @@ public class EventsManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.I))
         {
-            OnDoorOpen?.Invoke();
-        }
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            OnGuestsEnter?.Invoke();
+            StartCoroutine(StartingSecondPhase());
         }
 
         if (Input.GetKeyDown(KeyCode.P))
         {
             OnSecondPhase?.Invoke();
         }
+    }
+
+    IEnumerator StartingSecondPhase()
+    {
+        OnDoorOpen?.Invoke();
+        yield return new WaitForSeconds(timeBetweenEvents);
+        OnGuestsEnter?.Invoke();
+        yield return new WaitForSeconds(timeBetweenEvents);
+        OnSecondPhase?.Invoke();
     }
 
     public void EnableAgents()
