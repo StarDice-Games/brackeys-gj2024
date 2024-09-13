@@ -2,7 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(InputController))]
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(CapsuleCollider2D))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField, Range(0, 25)] float moveSpeed = 5f;
