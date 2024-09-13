@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class Room : MonoBehaviour
+public class Door : MonoBehaviour
 {
-    public Transform roomCenter;
-    public Transform spawnPoint;
+    [SerializeField] Transform roomCenter;
+    [SerializeField] Transform spawnPoint;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -11,6 +11,11 @@ public class Room : MonoBehaviour
         {
             other.transform.position = spawnPoint.position;
             Camera.main.GetComponent<CameraController>().MoveToRoom(roomCenter);
+        }
+
+        if (other.CompareTag("Guest"))
+        {
+            other.transform.position = spawnPoint.position;
         }
     }
 }
