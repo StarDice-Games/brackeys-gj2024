@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private InputController inputController;
     private Rigidbody2D rigidBody;
     private InteractionDetector interactorDetector;
+    private Animator animator;
 
     public Vector2 LastPosition { get => lastPosition; }
 
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
         inputController = GetComponent<InputController>();
         rigidBody = GetComponent<Rigidbody2D>();
         interactorDetector = GetComponent<InteractionDetector>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Start()
@@ -37,6 +39,10 @@ public class PlayerController : MonoBehaviour
     {
         position.x = inputController.MovementValue.x;
         position.y = inputController.MovementValue.y;
+
+
+        animator.SetBool("isWalking", position != Vector2.zero);
+
 
         SetLastPosition();
         Move(position);
