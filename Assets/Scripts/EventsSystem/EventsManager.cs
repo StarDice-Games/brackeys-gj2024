@@ -39,6 +39,7 @@ public class EventsManager : MonoBehaviour
 
     private void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.I))
         {
             OnDoorOpen?.Invoke();
@@ -47,6 +48,11 @@ public class EventsManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.O))
         {
             OnGuestsEnter?.Invoke();
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            OnSecondPhase?.Invoke();
         }
     }
 
@@ -90,5 +96,15 @@ public class EventsManager : MonoBehaviour
     public void ScreenFadeOut(float time)
     {
         fader.FadeOut(time);
+    }
+
+    public void EnablePlayerController()
+    {
+        playerController.enabled = true;
+    }
+
+    public void DisablePlayerController()
+    {
+        playerController.enabled = false;
     }
 }

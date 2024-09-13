@@ -16,7 +16,7 @@ public class Agent : MonoBehaviour
 
     private Vector2 desiredVelocity;
     private Vector2 steeringVelocity;
-    private bool isFacingRight = true;
+    [SerializeField] bool isFacingRight = true;
 
     private BoxCollider2D[] boxCollider2Ds;
 
