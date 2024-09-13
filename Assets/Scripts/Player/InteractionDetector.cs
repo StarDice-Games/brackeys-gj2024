@@ -71,8 +71,11 @@ public class InteractionDetector : MonoBehaviour
                     {
                         if (grabbedItem == null)
                         {
-                            nearestInteractable.HoverInteract();
-                            OnHoverInteraction?.Invoke();
+                            if (item.IsInteractable)
+                            {
+                                nearestInteractable.HoverInteract();
+                                OnHoverInteraction?.Invoke();
+                            }
                         }
                     }
                     else if (currentObject.TryGetComponent(out ItemPlace itemPlace))

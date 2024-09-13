@@ -19,6 +19,7 @@ public enum eItemType
     DirtyClothes,
     Pillows,
     Dishes,
+    Guest
 }
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Items/New Item")]
