@@ -6,8 +6,12 @@ public class EventsManager : MonoBehaviour
 {
     public static EventsManager Instance;
     [SerializeField] Fader fader;
+    [SerializeField] GlobalVolumeManager globalVolumeManager;
+    [Header("Fade")]
     [SerializeField] float fadeInTime;
     [SerializeField] float fadeOutTime;
+    [Header("Volume")]
+    [SerializeField] float changeVolumeTime;
 
     public UnityEvent OnStartGame, OnMainTaskCompleted, OnDoorOpen, OnSecondPhase;
 
@@ -28,7 +32,12 @@ public class EventsManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.O))
         {
-            fader.FadeOut(fadeOutTime);
+            OnSecondPhase?.Invoke();
         }
+    }
+
+    public void StartGlobalVolumePhase2()
+    {
+        globalVolumeManager.FadeIn(changeVolumeTime);
     }
 }
