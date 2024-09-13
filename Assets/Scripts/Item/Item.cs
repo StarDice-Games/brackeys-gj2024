@@ -5,7 +5,7 @@ public class Item : MonoBehaviour, IInteractable
     [SerializeField] ItemSO itemSO;
     public ItemSO ItemSO { get => itemSO; }
 
-    [SerializeField] SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;
 
     private bool isGrabbable;
     public bool IsGrabbable { get => isGrabbable; set => isGrabbable = value; }
