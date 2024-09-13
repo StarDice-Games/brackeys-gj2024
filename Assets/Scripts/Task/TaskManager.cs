@@ -6,7 +6,9 @@ public class TaskManager : MonoBehaviour
     [SerializeField]
     private List<Task> initialTasks;
     [SerializeField]
-    private Task finalTask;
+    private Task finalTaskWelcomeGuest;
+    [SerializeField]
+    private Task finalTaskDinner;
 
     private bool initialTasksCompleted = false;
 
@@ -31,17 +33,27 @@ public class TaskManager : MonoBehaviour
 
             if (allInitialTasksCompleted)
             {
-                Debug.Log("All initial task completed");
-            }
-
-            if (allInitialTasksCompleted&&finalTask)
-            {
                 initialTasksCompleted = true;
-                finalTask.gameObject.SetActive(true);
+                Debug.Log("All initial tasks completed!");
+
+                if (finalTaskWelcomeGuest != null)
+                {
+                    finalTaskWelcomeGuest.gameObject.SetActive(true);
+                }
             }
         }
 
-        if (initialTasksCompleted && finalTask.IsCompleted())
+        if (initialTasksCompleted && finalTaskWelcomeGuest != null && finalTaskWelcomeGuest.IsCompleted())
+        {
+            Debug.Log("Guest welcomed, let's activate DINNER!");
+
+            if (finalTaskDinner != null)
+            {
+                finalTaskDinner.gameObject.SetActive(true);
+            }
+        }
+
+        if (finalTaskDinner != null && finalTaskDinner.IsCompleted())
         {
             Debug.Log("All tasks completed! Game complete.");
         }
