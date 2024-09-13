@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2242206116677011676
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7859268896941795178}
-  m_Layer: 6
-  m_Name: ray
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7859268896941795178
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2242206116677011676}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1002729282331015451}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4685058913105213283
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,6 +97,7 @@ GameObject:
   - component: {fileID: 6171516191327480521}
   - component: {fileID: 2324201063600786597}
   - component: {fileID: 7410015315560002714}
+  - component: {fileID: 2440158418616637768}
   m_Layer: 6
   m_Name: Guest
   m_TagString: Guest
@@ -149,7 +119,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 16491938561503085}
-  - {fileID: 7859268896941795178}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9015942328729646461
@@ -167,12 +136,6 @@ MonoBehaviour:
   warningRange: 3.5
   maxVelocity: 2.5
   maxForce: 10
-  avoidObstacleRayDistance: 1
-  obstaclesLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  rb: {fileID: 7410015315560002714}
-  ray: {fileID: 7859268896941795178}
 --- !u!61 &6171516191327480521
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -290,3 +253,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &2440158418616637768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5692740859790856723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 662b697d9586cc64cbaa7505ed153a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSO: {fileID: 11400000, guid: 3862f52fc0c1c3a44ba75af2d0fc70e8, type: 2}
+  spriteRenderer: {fileID: 5701382169734763663}
+  associatedTask: {fileID: 0}

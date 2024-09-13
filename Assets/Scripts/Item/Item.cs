@@ -9,7 +9,7 @@ public class Item : MonoBehaviour, IInteractable
 
     private bool isGrabbable;
     public bool IsGrabbable { get => isGrabbable; set => isGrabbable = value; }
-    public bool IsInteractable { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public bool IsInteractable { get; set; }
 
     private bool completed = false;
 
@@ -18,11 +18,13 @@ public class Item : MonoBehaviour, IInteractable
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Start()
     {
+        IsInteractable = true;
+
         if (itemSO.InteractionType == eInteractionType.Grabbable)
         {
             isGrabbable = true;
@@ -50,6 +52,8 @@ public class Item : MonoBehaviour, IInteractable
         {
             associatedTask.CheckCompletion();
         }
+
+        IsInteractable = false;
     }
 
     private void InteractWithStaticObject()
@@ -59,6 +63,7 @@ public class Item : MonoBehaviour, IInteractable
             Debug.Log("Interacting with a static object.");
             spriteRenderer.sprite = itemSO.InteractedSprite;
             completed = true;
+            //gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 
@@ -66,7 +71,7 @@ public class Item : MonoBehaviour, IInteractable
     {
         if (!completed)
         {
-            Debug.Log("Grabbing the object."); 
+            Debug.Log("Grabbing the object.");
             completed = true;
         }
     }
