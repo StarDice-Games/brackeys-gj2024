@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Agent : MonoBehaviour
 {
@@ -10,10 +9,7 @@ public class Agent : MonoBehaviour
     [SerializeField] float maxForce;
     [SerializeField] float avoidObstacleRayDistance;
     [SerializeField] LayerMask obstaclesLayer;
-    Rigidbody2D rb;
-
-    public Vector2 areaMin;
-    public Vector2 areaMax;
+    [SerializeField] Rigidbody2D rb;
 
     public Transform ray;
     Transform player;
@@ -27,37 +23,41 @@ public class Agent : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, warningRange);
+
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawRay(transform.position, rb.velocity * 5f);
     }
     Vector2 desiredVelocity;
     Vector2 steeringVelocity;
-    private bool isFacingRight;
+    private bool isFacingRight = true;
 
     private void FixedUpdate()
     {
-        RaycastHit2D rayHit = Physics2D.Raycast(transform.position, rb.velocity.normalized, warningRange, obstaclesLayer);
-        Debug.DrawRay(transform.position, rb.velocity.normalized * warningRange, Color.green);
-        if (rayHit)
-        {
-            Debug.Log("Collidendo con.. " + rayHit.transform);
+        HandleFlip(rb.velocity.normalized);
+        /*   RaycastHit2D rayHit = Physics2D.Raycast(transform.position, rb.velocity.normalized, warningRange, obstaclesLayer);
+           Debug.DrawRay(transform.position, rb.velocity.normalized * warningRange, Color.green);
+           if (rayHit)
+           {
+               Debug.Log("Collidendo con.. " + rayHit.transform);
 
-            if (rayHit.transform != gameObject.transform)
-            {
-                Debug.Log("Collidendo con.. " + rayHit.transform);
-                if (Vector2.Distance(transform.position, rayHit.transform.position) < 2f)
-                {
-                    desiredVelocity = (transform.position - (Vector3)rayHit.point).normalized;
-                    desiredVelocity *= maxVelocity;
+               if (rayHit.transform != gameObject.transform)
+               {
+                   Debug.Log("Collidendo con.. " + rayHit.transform);
+                   if (Vector2.Distance(transform.position, rayHit.transform.position) < 2f)
+                   {
+                       desiredVelocity = (transform.position - (Vector3)rayHit.point).normalized;
+                       desiredVelocity *= maxVelocity;
 
-                    steeringVelocity = desiredVelocity - rb.velocity;
-                    steeringVelocity = Vector2.ClampMagnitude(steeringVelocity, maxForce);
+                       steeringVelocity = desiredVelocity - rb.velocity;
+                       steeringVelocity = Vector2.ClampMagnitude(steeringVelocity, maxForce);
 
-                    rb.velocity += steeringVelocity;
-                    rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxVelocity);
+                       rb.velocity += steeringVelocity;
+                       rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxVelocity);
 
-                    transform.position += (Vector3)rb.velocity * Time.fixedDeltaTime;
-                }
-            }
-        }
+                       transform.position += (Vector3)rb.velocity * Time.fixedDeltaTime;
+                   }
+               }
+           }*/
 
         RaycastHit2D warningCircleHit = Physics2D.CircleCast(transform.position, warningRange, Vector2.right);
         if (warningCircleHit)
@@ -65,11 +65,9 @@ public class Agent : MonoBehaviour
             if (warningCircleHit.transform.gameObject.CompareTag("Player"))
             {
                 player = warningCircleHit.transform;
-                Debug.Log("RUUUNNNN");
             }
             else
             {
-                Debug.Log("Player is far");
                 player = null;
             }
         }
@@ -78,30 +76,40 @@ public class Agent : MonoBehaviour
         {
             if (Vector2.Distance(transform.position, player.position) < warningRange)
             {
-                desiredVelocity = (transform.position - player.position).normalized;
-                desiredVelocity *= maxVelocity;
-
-                steeringVelocity = desiredVelocity - rb.velocity;
-                steeringVelocity = Vector2.ClampMagnitude(steeringVelocity, maxForce);
-
-                rb.velocity += steeringVelocity;
-                rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxVelocity);
-
-                transform.position += (Vector3)rb.velocity * Time.fixedDeltaTime;
-            }
-            else
-            {
+                Flee();
+                return;
             }
         }
 
-        //HandleFlip(rb.velocity.normalized);
+        // rb.velocity += (Vector2)RandomDirection() * Time.fixedDeltaTime;
     }
 
-    private Vector2 RandomTarget()
+    private void Flee()
     {
-        float randomX = Random.Range(areaMin.x, areaMax.x);
-        float randomY = Random.Range(areaMin.y, areaMax.y);
-        return new Vector2(randomX, randomY);
+        desiredVelocity = (transform.position - player.position).normalized;
+        desiredVelocity *= maxVelocity;
+
+        steeringVelocity = desiredVelocity - rb.velocity;
+        steeringVelocity = Vector2.ClampMagnitude(steeringVelocity, maxForce);
+
+        rb.velocity += steeringVelocity;
+        //rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxVelocity);
+
+        // Applica la steering velocity al Rigidbody
+        rb.AddForce(steeringVelocity, ForceMode2D.Force);
+
+        // Limita la velocità del Rigidbody
+        rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxVelocity);
+        // transform.position += (Vector3)rb.velocity * Time.fixedDeltaTime;
+    }
+
+    private Vector2 RandomDirection()
+    {
+        float randomX = Random.Range(-1, 1);
+        float randomY = Random.Range(-1, 1);
+
+        Vector2 randomDirection = new Vector2(randomX, randomY);
+        return randomDirection.normalized;
     }
 
     private void HandleFlip(Vector2 direction)

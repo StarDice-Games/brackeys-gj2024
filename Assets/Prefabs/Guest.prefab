@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 7410015315560002714}
   m_Layer: 6
   m_Name: Guest
-  m_TagString: Untagged
+  m_TagString: Guest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,8 +171,7 @@ MonoBehaviour:
   obstaclesLayer:
     serializedVersion: 2
     m_Bits: 256
-  areaMin: {x: -12, y: -7}
-  areaMax: {x: 12, y: 7}
+  rb: {fileID: 7410015315560002714}
   ray: {fileID: 7859268896941795178}
 --- !u!61 &6171516191327480521
 BoxCollider2D:
@@ -289,5 +288,5 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
