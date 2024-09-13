@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 2_Paint
   m_EditorClassIdentifier: 
   itemName: Paint
-  interactedSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  interactedSprite: {fileID: -593833086, guid: 4ba2ecceff74bfc49b528e04ad065c24, type: 3}
   itemType: 2
   interactionType: 0
