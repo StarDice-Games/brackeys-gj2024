@@ -99,5 +99,8 @@ public class ItemPlace : MonoBehaviour, IInteractable
         return gameObject.transform;
     }
 
-
+    public bool IsCompleted()
+    {
+        return false;
+    }
 }

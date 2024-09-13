@@ -5,17 +5,20 @@ public class Item : MonoBehaviour, IInteractable
     [SerializeField] ItemSO itemSO;
     public ItemSO ItemSO { get => itemSO; }
 
-    SpriteRenderer spriteRenderer;
-    BoxCollider2D boxCollider2D;
+    [SerializeField] SpriteRenderer spriteRenderer;
 
-    bool isGrabbable;
+    private bool isGrabbable;
     public bool IsGrabbable { get => isGrabbable; set => isGrabbable = value; }
-    public bool IsInteractable { get; set; }
+    public bool IsInteractable { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
+    private bool completed = false;
+
+    [HideInInspector]
+    public Task associatedTask;
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        boxCollider2D = GetComponent<BoxCollider2D>();
     }
 
     private void Start()
@@ -28,22 +31,68 @@ public class Item : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (itemSO.InteractionType == eInteractionType.Static)
+        switch (itemSO.InteractionType)
         {
-            Debug.Log("Interact with a static Object");
-            spriteRenderer.sprite = itemSO.InteractedSprite;
-            boxCollider2D.enabled = false;
+            case eInteractionType.Static:
+                InteractWithStaticObject();
+                break;
+
+            case eInteractionType.Grabbable:
+                GrabObject();
+                break;
+
+            case eInteractionType.Cleanable:
+                CleanObject();
+                break;
         }
+
+        if (associatedTask != null)
+        {
+            associatedTask.CheckCompletion();
+        }
+    }
+
+    private void InteractWithStaticObject()
+    {
+        if (!completed)
+        {
+            Debug.Log("Interacting with a static object.");
+            spriteRenderer.sprite = itemSO.InteractedSprite;
+            completed = true;
+        }
+    }
+
+    private void GrabObject() // Not used
+    {
+        if (!completed)
+        {
+            Debug.Log("Grabbing the object."); 
+            completed = true;
+        }
+    }
+
+    private void CleanObject()
+    {
+        if (!completed)
+        {
+            Debug.Log("Cleaning the object.");
+            completed = true;
+        }
+    }
+
+    public bool IsCompleted()
+    {
+        return completed;
     }
 
     public void HoverInteract()
     {
-        Debug.Log("Hover interaction " + gameObject.name);
+
     }
 
     public void ExitInteract()
     {
-        Debug.Log("Exit interaction " + gameObject.name);
+
     }
 
     public Transform GetTransform()

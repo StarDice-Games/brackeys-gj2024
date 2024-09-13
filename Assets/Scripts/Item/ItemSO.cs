@@ -3,7 +3,8 @@ using UnityEngine;
 public enum eInteractionType
 {
     Static,
-    Grabbable
+    Grabbable,
+    Cleanable
 }
 
 public enum eItemType
