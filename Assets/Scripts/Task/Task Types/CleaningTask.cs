@@ -32,4 +32,14 @@ public class CleaningTask : Task
     {
         return cleanable != null && cleanable.IsCompleted();
     }
+
+    public override int GetCompletedObjectives()
+    {
+        return cleanable != null && cleanable.IsCompleted() ? 1 : 0;
+    }
+
+    public override int GetTotalObjectives()
+    {
+        return 1;
+    }
 }

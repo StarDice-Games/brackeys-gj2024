@@ -24,4 +24,8 @@ public abstract class Task : MonoBehaviour
         Debug.Log("Task completed");
         OnTaskCompleted?.Invoke(this);
     }
+
+    public abstract int GetCompletedObjectives();
+
+    public abstract int GetTotalObjectives();
 }
