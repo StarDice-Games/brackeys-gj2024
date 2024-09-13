@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Blood
   interactedSprite: {fileID: 0}
   itemType: 1
-  interactionType: 0
+  interactionType: 2
