@@ -50,6 +50,11 @@ public class InteractionDetector : MonoBehaviour
         {
             if (nearestInteractable.GetTransform().TryGetComponent(out Item item))
             {
+                if (!item.IsInteractable || grabbedItem)
+                {
+                    return;
+                }
+
                 if (item.IsGrabbable)
                 {
                     item.Interact();

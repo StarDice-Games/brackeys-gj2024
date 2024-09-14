@@ -35,6 +35,8 @@ public class Item : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        IsInteractable = false;
+
         AudioController.Instance.PlaySound(audioClip.name, true, "sfx");
 
         if (itemSO.ItemType == eItemType.Door)
@@ -62,8 +64,6 @@ public class Item : MonoBehaviour, IInteractable
         {
             associatedTask.CheckCompletion();
         }
-
-        IsInteractable = false;
     }
 
     private void InteractWithStaticObject()
