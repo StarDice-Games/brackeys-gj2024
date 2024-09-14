@@ -35,6 +35,7 @@ public class EventsManager : MonoBehaviour
     [SerializeField] Item mainDoor;
 
     [Header("Tasks")]
+    [SerializeField] GameObject taskUI;
     [SerializeField] GameObject welcomeGuestsTask, haveDinnerTask;
     [SerializeField] GameObject initialTaskContainer;
 
@@ -61,6 +62,11 @@ public class EventsManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             StartCoroutine(StartingSecondPhase());
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            StartCoroutine(StartingEndGame());
         }
 
         if (!monsterController.gameObject.activeInHierarchy)
@@ -209,5 +215,10 @@ public class EventsManager : MonoBehaviour
     public void ToggleHaveDinnerTask(bool isActive)
     {
         haveDinnerTask.SetActive(isActive);
+    }
+
+    public void ToggleTaskUI(bool isActive)
+    {
+        taskUI.SetActive(isActive);
     }
 }
