@@ -58,6 +58,7 @@ public class TaskManager : MonoBehaviour
         if (finalTaskDinner != null && finalTaskDinner.IsCompleted())
         {
             Debug.Log("All tasks completed! Game complete.");
+            StartCoroutine(EventsManager.Instance.StartingEndGame());
         }
     }
 

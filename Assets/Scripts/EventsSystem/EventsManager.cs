@@ -34,6 +34,10 @@ public class EventsManager : MonoBehaviour
     [Header("MainDoor")]
     [SerializeField] Item mainDoor;
 
+    [Header("Tasks")]
+    [SerializeField] GameObject welcomeGuestsTask, haveDinnerTask;
+    [SerializeField] GameObject initialTaskContainer;
+
     public UnityEvent OnStartGame, OnInitialTasksCompleted, OnDoorOpen, OnGuestsEnter, OnDoorClosed, OnSecondPhase, OnStartEndGame, OnMiddleEndGame, OnEndGame;
     public static EventsManager Instance;
 
@@ -190,5 +194,20 @@ public class EventsManager : MonoBehaviour
     public void ToggleMainDoor(bool isOpen)
     {
         mainDoor.gameObject.SetActive(isOpen);
+    }
+
+    public void ToggleInitialTaskContainerTask(bool isActive)
+    {
+        initialTaskContainer.SetActive(isActive);
+    }
+
+    public void ToggleWelcomeGuestsTask(bool isActive)
+    {
+        welcomeGuestsTask.SetActive(isActive);
+    }
+
+    public void ToggleHaveDinnerTask(bool isActive)
+    {
+        haveDinnerTask.SetActive(isActive);
     }
 }
