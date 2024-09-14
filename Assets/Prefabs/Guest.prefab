@@ -156,10 +156,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c9b9dc0659b847428663c7681d1f104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  warningRange: 3.5
+  warningRange: 10
   maxVelocity: 2.5
   maxForce: 10
+  playerMonster: {fileID: 0}
   isFacingRight: 1
+  animationHandler: {fileID: 0}
 --- !u!61 &6171516191327480521
 BoxCollider2D:
   m_ObjectHideFlags: 0
