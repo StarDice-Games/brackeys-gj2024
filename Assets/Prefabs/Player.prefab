@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8331427514745965449}
   - component: {fileID: 3934141844857258581}
   m_Layer: 0
-  m_Name: Sprite
+  m_Name: HumanSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 6576259475664344627}
   - component: {fileID: 8789743555530362511}
   - component: {fileID: 1059949795252731989}
+  - component: {fileID: 2772893509324358581}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -393,6 +394,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0.05, y: -0.85}
   m_Size: {x: 0.9, y: 0.31999996}
   m_Direction: 1
+--- !u!114 &2772893509324358581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8765642544336707377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b84912390e29ab44869e682396c15ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8004840109718976624
 PrefabInstance:
   m_ObjectHideFlags: 0
