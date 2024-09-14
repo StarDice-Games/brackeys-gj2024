@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 16491938561503085}
   - component: {fileID: 5701382169734763663}
+  - component: {fileID: 948257123894620869}
   m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &948257123894620869
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4685058913105213283}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5692740859790856723
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,6 +120,7 @@ GameObject:
   - component: {fileID: 2324201063600786597}
   - component: {fileID: 7410015315560002714}
   - component: {fileID: 2440158418616637768}
+  - component: {fileID: 4668625751922777012}
   m_Layer: 6
   m_Name: Guest
   m_TagString: Guest
@@ -267,5 +290,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSO: {fileID: 11400000, guid: 3862f52fc0c1c3a44ba75af2d0fc70e8, type: 2}
+  spriteRenderer: {fileID: 0}
   audioClip: {fileID: 8300000, guid: 3928e790b0725de4b81d78057d778be4, type: 3}
   associatedTask: {fileID: 0}
+--- !u!114 &4668625751922777012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5692740859790856723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b84912390e29ab44869e682396c15ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

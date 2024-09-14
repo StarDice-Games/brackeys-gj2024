@@ -20,10 +20,13 @@ public class Agent : MonoBehaviour
 
     private BoxCollider2D[] boxCollider2Ds;
 
+    [SerializeField] AnimationHandler animationHandler;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         item = GetComponent<Item>();
+        animationHandler = GetComponent<AnimationHandler>();
         boxCollider2Ds = GetComponents<BoxCollider2D>();
     }
 
@@ -43,6 +46,12 @@ public class Agent : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log("rb.velocity " + rb.velocity);
+        Debug.Log("desiredVelocity " + desiredVelocity);
+        Debug.Log("steeringVelocity " + desiredVelocity);
+
+        animationHandler.SetIsMoving(rb.velocity != Vector2.zero);
+
         if (item)
         {
             if (!item.IsInteractable)

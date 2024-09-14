@@ -53,6 +53,12 @@ public class EventsManager : MonoBehaviour
 
     private void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            StartCoroutine(StartingSecondPhase());
+        }
+
         if (!monsterController.gameObject.activeInHierarchy)
         {
             monsterController.transform.position = playerController.transform.position;
