@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class EventsManager : MonoBehaviour
 {
@@ -251,5 +252,10 @@ public class EventsManager : MonoBehaviour
     public void ToggleCreditsScreen(bool isActive)
     {
         creditsUI.SetActive(isActive);
+    }
+
+    public void ToggleMouseCursor(bool isActive)
+    {
+        Cursor.visible = isActive;
     }
 }

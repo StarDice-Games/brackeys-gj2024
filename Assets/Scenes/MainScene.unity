@@ -519,6 +519,14 @@ PrefabInstance:
       propertyPath: OnInitialTasksCompleted.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 6194255445226019701}
+    - target: {fileID: 4007465458139262641, guid: 707969d6022067f489e78de03d869990, type: 3}
+      propertyPath: OnEndShowCredits.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6912747017434559318, guid: 707969d6022067f489e78de03d869990, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7345429214743616805, guid: 707969d6022067f489e78de03d869990, type: 3}
       propertyPath: m_Name
       value: Events
