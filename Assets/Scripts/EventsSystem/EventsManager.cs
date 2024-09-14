@@ -17,6 +17,7 @@ public class EventsManager : MonoBehaviour
 
     [Header("Player")]
     [SerializeField] PlayerController playerController;
+    [SerializeField] GameObject monsterController;
 
     [Header("Guests")]
     [SerializeField] List<GameObject> guests;
@@ -52,6 +53,11 @@ public class EventsManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             OnSecondPhase?.Invoke();
+        }
+
+        if (!monsterController.activeInHierarchy)
+        {
+            monsterController.transform.position = playerController.transform.position;
         }
     }
 
@@ -114,5 +120,11 @@ public class EventsManager : MonoBehaviour
     public void DisablePlayerController()
     {
         playerController.enabled = false;
+    }
+
+    public void SwapPlayerToMonster(bool isMonster)
+    {
+        playerController.gameObject.SetActive(!isMonster);
+        monsterController.SetActive(isMonster);
     }
 }
