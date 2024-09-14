@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 7
   anchorPoint: {fileID: 271099145456899866}
-  maxItems: 1
+  maxItems: 3
   currentItems: []
   itemHighlight: {r: 1, g: 1, b: 1, a: 0.19607843}
   audioClip: {fileID: 8300000, guid: 7175305a045f13e4ab3eeaaf35da02d8, type: 3}
@@ -138,7 +138,7 @@ Transform:
   m_GameObject: {fileID: 5631490152512306568}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.86, y: 0.39, z: 0}
+  m_LocalPosition: {x: -0.218, y: 2.422, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -184,7 +184,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 0
   m_Sprite: {fileID: -116091803, guid: 70537ccb1c7a45648aa4a43e3f979240, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
