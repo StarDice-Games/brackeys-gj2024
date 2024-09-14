@@ -29,7 +29,7 @@ public class UIController : MonoBehaviour
             Task task = allTasks[i];
             float progress = task.GetCompletedObjectives() / (float)task.GetTotalObjectives();
             taskProgressBars[i].fillAmount = progress;
-            taskProgressTexts[i].text = $"{task.GetCompletedObjectives()} / {task.GetTotalObjectives()}";
+            taskProgressTexts[i].text = $"{task.GetCompletedObjectives()}/{task.GetTotalObjectives()}";
 
             if (task is MultiTask multiTask)
             {
