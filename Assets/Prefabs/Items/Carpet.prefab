@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6194255444950008996}
   - component: {fileID: 4557725891812191853}
   m_Layer: 6
-  m_Name: Dishes
+  m_Name: Carpet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 745101283, guid: 70537ccb1c7a45648aa4a43e3f979240, type: 3}
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 1659482608, guid: 70537ccb1c7a45648aa4a43e3f979240, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,18 +119,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.046762705, y: 0.015587568}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8125, y: 0.625}
+    oldSize: {x: 7.9375, y: 7.0625}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 7.0791526, y: 6.954452}
   m_EdgeRadius: 0
 --- !u!114 &6194255444950008996
 MonoBehaviour:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 662b697d9586cc64cbaa7505ed153a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSO: {fileID: 11400000, guid: 939c9089cd2062d4da330bcd73fb60d1, type: 2}
+  itemSO: {fileID: 11400000, guid: 4c99817ca9e71c24b8ef726222e195a6, type: 2}
   associatedTask: {fileID: 0}
 --- !u!50 &4557725891812191853
 Rigidbody2D:

@@ -1,41 +1,137 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioController : MonoBehaviour
 {
-    public AudioSource soundEffectSource;
-    public AudioClip[] audioClips;         
+    public static AudioController Instance;
 
-    public void PlaySound(string clipName)
+    private AudioSource musicSource;
+    private AudioSource ambientSource;
+    private AudioSource sfxSource;
+
+    [SerializeField] private float fadeDuration = 1f;
+
+    [Header("Clips")]
+    [SerializeField] private List<AudioClip> audioClips;
+    private Dictionary<string, AudioClip> audioClipDictionary;
+
+    private void Awake()
     {
-        AudioClip clip = FindClipByName(clipName);
-        if (clip != null)
+        if (Instance == null)
         {
-            soundEffectSource.clip = clip;
-            soundEffectSource.Play();
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            InitializeAudioSources();
+            InitializeAudioClipDictionary();
         }
         else
         {
-            Debug.LogWarning($"Sound {clipName} not found!");
+            Destroy(gameObject);
         }
     }
 
-    public void StopSound()
+    private void InitializeAudioSources()
     {
-        if (soundEffectSource.isPlaying)
-        {
-            soundEffectSource.Stop();
-        }
+        musicSource = gameObject.AddComponent<AudioSource>();
+        musicSource.loop = true;
+
+        ambientSource = gameObject.AddComponent<AudioSource>();
+        ambientSource.loop = true;
+
+        sfxSource = gameObject.AddComponent<AudioSource>();
     }
 
-    private AudioClip FindClipByName(string clipName)
+    private void InitializeAudioClipDictionary()
     {
+        audioClipDictionary = new Dictionary<string, AudioClip>();
         foreach (var clip in audioClips)
         {
-            if (clip.name == clipName)
+            if (!audioClipDictionary.ContainsKey(clip.name))
             {
-                return clip;
+                audioClipDictionary.Add(clip.name, clip);
             }
         }
-        return null;
+    }
+
+    public void PlaySound(string clipName, bool oneShot = true, string sourceType = "sfx")
+    {
+        if (audioClipDictionary.ContainsKey(clipName))
+        {
+            AudioClip clip = audioClipDictionary[clipName];
+            AudioSource source = GetAudioSourceByType(sourceType);
+
+            if (oneShot)
+            {
+                source.PlayOneShot(clip);
+            }
+            else
+            {
+                source.clip = clip;
+                source.Play();
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"Clip {clipName} not found in AudioController.");
+        }
+    }
+
+    public void StopSound(string sourceType = "sfx")
+    {
+        AudioSource source = GetAudioSourceByType(sourceType);
+        source.Stop();
+    }
+
+    private AudioSource GetAudioSourceByType(string sourceType)
+    {
+        switch (sourceType.ToLower())
+        {
+            case "music":
+                return musicSource;
+            case "ambient":
+                return ambientSource;
+            case "sfx":
+            default:
+                return sfxSource;
+        }
+    }
+
+    private IEnumerator FadeOut(AudioSource source)
+    {
+        float startVolume = source.volume;
+
+        while (source.volume > 0)
+        {
+            source.volume -= startVolume * Time.deltaTime / fadeDuration;
+            yield return null;
+        }
+
+        source.Stop();
+        source.volume = startVolume;
+    }
+
+    private IEnumerator FadeIn(AudioSource source)
+    {
+        source.volume = 0;
+        source.Play();
+
+        while (source.volume < 1)
+        {
+            source.volume += Time.deltaTime / fadeDuration;
+            yield return null;
+        }
+    }
+
+    public void FadeOutSound(string sourceType)
+    {
+        AudioSource source = GetAudioSourceByType(sourceType);
+        StartCoroutine(FadeOut(source));
+    }
+
+    public void FadeInSound(string sourceType)
+    {
+        AudioSource source = GetAudioSourceByType(sourceType);
+        StartCoroutine(FadeIn(source));
     }
 }
