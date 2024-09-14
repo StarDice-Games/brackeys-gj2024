@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7313031400240901729}
   - component: {fileID: 8331427514745965449}
+  - component: {fileID: 3934141844857258581}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3934141844857258581
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347544904058787145}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3b05e183b3c323344b67f65f39bde694, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1753343485214905042
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,6 +253,7 @@ GameObject:
   - component: {fileID: 6576259475664344627}
   - component: {fileID: 8789743555530362511}
   - component: {fileID: 1059949795252731989}
+  - component: {fileID: 2772893509324358581}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -306,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2571d2af8dc6a6349bd58e6c1c7e0045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 3.8
   childToFlip: {fileID: 2289399412775500048}
 --- !u!114 &6576259475664344627
 MonoBehaviour:
@@ -371,6 +394,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0.05, y: -0.85}
   m_Size: {x: 0.9, y: 0.31999996}
   m_Direction: 1
+--- !u!114 &2772893509324358581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8765642544336707377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b84912390e29ab44869e682396c15ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8004840109718976624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -379,6 +414,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4448472719234281166}
     m_Modifications:
+    - target: {fileID: 2369624319907081182, guid: e17e8e0ca08bc3d4fa84a92ecf1789f4, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b397dc1793608946987d2f01d1d43e3, type: 2}
+    - target: {fileID: 2369624319907081182, guid: e17e8e0ca08bc3d4fa84a92ecf1789f4, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5281499368136002177, guid: e17e8e0ca08bc3d4fa84a92ecf1789f4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

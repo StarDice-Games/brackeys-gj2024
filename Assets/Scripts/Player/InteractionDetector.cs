@@ -27,6 +27,7 @@ public class InteractionDetector : MonoBehaviour
             {
                 if (item.IsGrabbable)
                 {
+                    item.Interact();
                     Grab(item);
                 }
                 else
@@ -140,6 +141,9 @@ public class InteractionDetector : MonoBehaviour
                     // Check if the Item is in the right place
                     if (itemPlace.ItemType == grabbedItem.ItemSO.ItemType)
                     {
+
+                        itemPlace.Interact();
+
                         // Attach grabbed item to the anchor point
                         itemPlace.AddItem(grabbedItem);
 

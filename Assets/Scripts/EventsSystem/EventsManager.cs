@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -15,12 +17,15 @@ public class EventsManager : MonoBehaviour
 
     [Header("Player")]
     [SerializeField] PlayerController playerController;
+    [SerializeField] PlayerController monsterController;
 
     [Header("Guests")]
     [SerializeField] List<GameObject> guests;
     [SerializeField] List<Transform> guestSpawnPoints;
 
-    public UnityEvent OnStartGame, OnMainTaskCompleted, OnDoorOpen, OnGuestsEnter, OnSecondPhase;
+    [SerializeField] float timeBetweenEvents = 5f;
+
+    public UnityEvent OnStartGame, OnMainTaskCompleted, OnDoorOpen, OnGuestsEnter, OnDoorClosed, OnSecondPhase, OnStartEndGame, OnMiddleEndGame, OnEndGame;
 
     public static EventsManager Instance;
 
@@ -39,21 +44,44 @@ public class EventsManager : MonoBehaviour
 
     private void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.I))
         {
-            OnDoorOpen?.Invoke();
-        }
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            OnGuestsEnter?.Invoke();
+            StartCoroutine(StartingSecondPhase());
         }
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            OnSecondPhase?.Invoke();
+            StartCoroutine(StartingEndGame());
         }
+
+        if (!monsterController.gameObject.activeInHierarchy)
+        {
+            monsterController.transform.position = playerController.transform.position;
+        }
+        else
+        {
+            playerController.transform.position = monsterController.transform.position;
+        }
+    }
+
+    IEnumerator StartingSecondPhase()
+    {
+        OnDoorOpen?.Invoke();
+        yield return new WaitForSeconds(timeBetweenEvents);
+        OnGuestsEnter?.Invoke();
+        yield return new WaitForSeconds(timeBetweenEvents);
+        OnDoorClosed?.Invoke();
+        yield return new WaitForSeconds(timeBetweenEvents);
+        OnSecondPhase?.Invoke();
+    }
+
+    IEnumerator StartingEndGame()
+    {
+        OnStartEndGame?.Invoke();
+        yield return new WaitForSeconds(timeBetweenEvents);
+        OnMiddleEndGame?.Invoke();
+        yield return new WaitForSeconds(timeBetweenEvents);
+        OnEndGame?.Invoke();
     }
 
     public void EnableAgents()
@@ -88,6 +116,11 @@ public class EventsManager : MonoBehaviour
         globalVolumeManager.FadeIn(changeVolumeTime);
     }
 
+    public void ApplyVolumeFirstPhase()
+    {
+        globalVolumeManager.FadeOut(changeVolumeTime);
+    }
+
     public void ScreenFadeIn(float time)
     {
         fader.FadeIn(time);
@@ -98,6 +131,16 @@ public class EventsManager : MonoBehaviour
         fader.FadeOut(time);
     }
 
+    public void TogglePlayerController(bool isActive)
+    {
+        playerController.enabled = isActive;
+    }
+
+    public void ToggleMonsterController(bool isActive)
+    {
+        monsterController.enabled = isActive;
+    }
+
     public void EnablePlayerController()
     {
         playerController.enabled = true;
@@ -106,5 +149,11 @@ public class EventsManager : MonoBehaviour
     public void DisablePlayerController()
     {
         playerController.enabled = false;
+    }
+
+    public void SwapPlayerToMonster(bool isMonster)
+    {
+        playerController.gameObject.SetActive(!isMonster);
+        monsterController.gameObject.SetActive(isMonster);
     }
 }

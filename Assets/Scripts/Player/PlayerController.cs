@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(InputController))]
@@ -17,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private InputController inputController;
     private Rigidbody2D rigidBody;
     private InteractionDetector interactorDetector;
+    private AnimationHandler animHandler;
 
     public Vector2 LastPosition { get => lastPosition; }
 
@@ -25,18 +28,21 @@ public class PlayerController : MonoBehaviour
         inputController = GetComponent<InputController>();
         rigidBody = GetComponent<Rigidbody2D>();
         interactorDetector = GetComponent<InteractionDetector>();
+        animHandler = GetComponent<AnimationHandler>();
     }
 
     private void Start()
     {
         SetRigidbody2DSettings();
-        inputController.Interact += HandleInteract;
+        inputController.Interact += interactorDetector.Interact;
     }
 
     void FixedUpdate()
     {
         position.x = inputController.MovementValue.x;
         position.y = inputController.MovementValue.y;
+
+        animHandler.SetIsMoving(IsPlayerMoving());
 
         SetLastPosition();
         Move(position);
@@ -50,15 +56,15 @@ public class PlayerController : MonoBehaviour
 
     private void SetLastPosition()
     {
-        if (position != Vector2.zero)
+        if (IsPlayerMoving())
         {
             lastPosition = position;
         }
     }
 
-    private void HandleInteract()
+    private bool IsPlayerMoving()
     {
-        interactorDetector.Interact();
+        return position != Vector2.zero;
     }
 
     private void HandleFlip(Vector2 direction)
@@ -88,5 +94,10 @@ public class PlayerController : MonoBehaviour
         rigidBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         rigidBody.gravityScale = 0;
         rigidBody.angularDrag = 0;
+    }
+
+    private void MonsterTransformation()
+    {
+
     }
 }
