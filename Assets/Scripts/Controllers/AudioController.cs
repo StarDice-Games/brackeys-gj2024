@@ -54,7 +54,7 @@ public class AudioController : MonoBehaviour
         }
     }
 
-    public void PlaySound(string clipName, bool oneShot = true, string sourceType = "sfx")
+    public void PlaySound(string clipName, bool oneShot = true, string sourceType = "sfx", float volume = 1)
     {
         if (audioClipDictionary.ContainsKey(clipName))
         {
@@ -69,6 +69,7 @@ public class AudioController : MonoBehaviour
             {
                 source.clip = clip;
                 source.Play();
+                source.volume = volume;
             }
         }
         else

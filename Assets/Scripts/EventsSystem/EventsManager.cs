@@ -25,9 +25,13 @@ public class EventsManager : MonoBehaviour
 
     [SerializeField] float timeBetweenEvents = 5f;
 
+    [Header("Audio")]
+    [SerializeField] AudioClip cozyMainTrack;
+
     public UnityEvent OnStartGame, OnMainTaskCompleted, OnDoorOpen, OnGuestsEnter, OnDoorClosed, OnSecondPhase, OnStartEndGame, OnMiddleEndGame, OnEndGame;
 
     public static EventsManager Instance;
+
 
     private void Awake()
     {
@@ -155,5 +159,10 @@ public class EventsManager : MonoBehaviour
     {
         playerController.gameObject.SetActive(!isMonster);
         monsterController.gameObject.SetActive(isMonster);
+    }
+
+    public void PlayCozyMainTrack()
+    {
+        AudioController.Instance.PlaySound(cozyMainTrack.name, false, "music", 0.05f);
     }
 }
