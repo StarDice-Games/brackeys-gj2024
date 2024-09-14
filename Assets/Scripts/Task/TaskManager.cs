@@ -34,7 +34,9 @@ public class TaskManager : MonoBehaviour
             if (allInitialTasksCompleted)
             {
                 initialTasksCompleted = true;
+
                 Debug.Log("All initial tasks completed!");
+                EventsManager.Instance.OnInitialTasksCompleted?.Invoke();
 
                 if (finalTaskWelcomeGuest != null)
                 {

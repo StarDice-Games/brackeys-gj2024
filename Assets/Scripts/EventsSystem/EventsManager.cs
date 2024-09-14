@@ -29,9 +29,12 @@ public class EventsManager : MonoBehaviour
     [SerializeField] AudioClip cozyMainTrack;
     [SerializeField] AudioClip monsterMainTrack;
     [SerializeField] AudioClip stormTrack;
+    [SerializeField] AudioClip closedDoorSFX;
 
-    public UnityEvent OnStartGame, OnMainTaskCompleted, OnDoorOpen, OnGuestsEnter, OnDoorClosed, OnSecondPhase, OnStartEndGame, OnMiddleEndGame, OnEndGame;
+    [Header("MainDoor")]
+    [SerializeField] Item mainDoor;
 
+    public UnityEvent OnStartGame, OnInitialTasksCompleted, OnDoorOpen, OnGuestsEnter, OnDoorClosed, OnSecondPhase, OnStartEndGame, OnMiddleEndGame, OnEndGame;
     public static EventsManager Instance;
 
 
@@ -50,16 +53,6 @@ public class EventsManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            StartCoroutine(StartingSecondPhase());
-        }
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            StartCoroutine(StartingEndGame());
-        }
-
         if (!monsterController.gameObject.activeInHierarchy)
         {
             monsterController.transform.position = playerController.transform.position;
@@ -70,7 +63,7 @@ public class EventsManager : MonoBehaviour
         }
     }
 
-    IEnumerator StartingSecondPhase()
+    public IEnumerator StartingSecondPhase()
     {
         OnDoorOpen?.Invoke();
         yield return new WaitForSeconds(timeBetweenEvents);
@@ -81,7 +74,7 @@ public class EventsManager : MonoBehaviour
         OnSecondPhase?.Invoke();
     }
 
-    IEnumerator StartingEndGame()
+    public IEnumerator StartingEndGame()
     {
         OnStartEndGame?.Invoke();
         yield return new WaitForSeconds(timeBetweenEvents);
@@ -181,5 +174,15 @@ public class EventsManager : MonoBehaviour
     public void StopStormTrack()
     {
         AudioController.Instance.StopSound("ambient");
+    }
+
+    public void PlayOnDoorClosed()
+    {
+        AudioController.Instance.PlaySound(closedDoorSFX.name, true, "sfx");
+    }
+
+    public void ToggleMainDoor(bool isOpen)
+    {
+        mainDoor.gameObject.SetActive(isOpen);
     }
 }

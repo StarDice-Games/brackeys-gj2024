@@ -5,7 +5,7 @@ public class Item : MonoBehaviour, IInteractable
     [SerializeField] ItemSO itemSO;
     public ItemSO ItemSO { get => itemSO; }
 
-    private SpriteRenderer spriteRenderer;
+    [SerializeField] SpriteRenderer spriteRenderer;
 
     private bool isGrabbable;
     public bool IsGrabbable { get => isGrabbable; set => isGrabbable = value; }
@@ -36,6 +36,12 @@ public class Item : MonoBehaviour, IInteractable
     public void Interact()
     {
         AudioController.Instance.PlaySound(audioClip.name, true, "sfx");
+
+        if (itemSO.ItemType == eItemType.Door)
+        {
+            ToggleSprite(true);
+            StartCoroutine(EventsManager.Instance.StartingSecondPhase());
+        }
 
         switch (itemSO.InteractionType)
         {
@@ -102,6 +108,11 @@ public class Item : MonoBehaviour, IInteractable
     public void ExitInteract()
     {
 
+    }
+
+    public void ToggleSprite(bool isActive)
+    {
+        spriteRenderer.enabled = isActive;
     }
 
     public Transform GetTransform()

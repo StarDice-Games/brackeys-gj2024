@@ -44,5 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b204d49d8c05940927602b2237f8a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialTasks: []
-  finalTask: {fileID: 0}
+  initialTasks:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  finalTaskWelcomeGuest: {fileID: 0}
+  finalTaskDinner: {fileID: 0}
