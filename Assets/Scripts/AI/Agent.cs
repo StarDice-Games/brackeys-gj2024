@@ -45,10 +45,6 @@ public class Agent : MonoBehaviour
 
     private void FixedUpdate()
     {
-        /*        Debug.Log("rb.velocity " + rb.velocity);
-                Debug.Log("desiredVelocity " + desiredVelocity);
-                Debug.Log("steeringVelocity " + desiredVelocity);*/
-
         animationHandler.SetIsMoving(rb.velocity != Vector2.zero);
 
         if (item)
@@ -62,18 +58,6 @@ public class Agent : MonoBehaviour
 
         HandleFlip(rb.velocity.normalized);
 
-      /*  RaycastHit2D warningCircleHit = Physics2D.CircleCast(transform.position, warningRange, player.position - transform.position);
-        if (warningCircleHit)
-        {
-            if (warningCircleHit.transform.gameObject.CompareTag("Player"))
-            {
-                playerMonster = warningCircleHit.transform;
-            }
-            else
-            {
-                playerMonster = null;
-            }
-        }*/
 
         if (playerMonster)
         {
@@ -141,7 +125,6 @@ public class Agent : MonoBehaviour
             }
         }
 
-        Debug.Log("Guest died");
         rb.velocity = Vector2.zero;
         desiredVelocity = Vector2.zero;
         steeringVelocity = Vector2.zero;

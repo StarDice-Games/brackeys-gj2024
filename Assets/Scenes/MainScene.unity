@@ -7443,7 +7443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7391627533386466057, guid: 059bcd23aed43d2428c743f9012a2d99, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.42
+      value: 13.22
       objectReference: {fileID: 0}
     - target: {fileID: 7391627533386466057, guid: 059bcd23aed43d2428c743f9012a2d99, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7480,6 +7480,14 @@ PrefabInstance:
     - target: {fileID: 7391627533386466057, guid: 059bcd23aed43d2428c743f9012a2d99, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545790117981341587, guid: 059bcd23aed43d2428c743f9012a2d99, type: 3}
+      propertyPath: m_Size.x
+      value: 0.96942925
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545790117981341587, guid: 059bcd23aed43d2428c743f9012a2d99, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.30068886
       objectReference: {fileID: 0}
     - target: {fileID: 8625100391342727663, guid: 059bcd23aed43d2428c743f9012a2d99, type: 3}
       propertyPath: spriteRenderer
