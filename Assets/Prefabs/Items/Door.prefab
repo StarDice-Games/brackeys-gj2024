@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: -810441189, guid: 70537ccb1c7a45648aa4a43e3f979240, type: 3}
+  m_Sprite: {fileID: 789673658, guid: 70537ccb1c7a45648aa4a43e3f979240, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSO: {fileID: 11400000, guid: ae3bc83147eed974faaf8ebc8e032363, type: 2}
+  audioClip: {fileID: 0}
   associatedTask: {fileID: 0}
 --- !u!50 &4557725891812191853
 Rigidbody2D:
