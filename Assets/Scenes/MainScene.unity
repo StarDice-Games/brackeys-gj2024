@@ -907,7 +907,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1430418786206242669, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: warningRange
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1430418786206242669, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: playerMonster
@@ -915,7 +915,7 @@ PrefabInstance:
       objectReference: {fileID: 1714675968}
     - target: {fileID: 2021342802715098271, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: warningRange
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2021342802715098271, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: playerMonster
@@ -979,7 +979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6435814753693593544, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: warningRange
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6435814753693593544, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: playerMonster
@@ -987,7 +987,7 @@ PrefabInstance:
       objectReference: {fileID: 1714675968}
     - target: {fileID: 6473785527917729010, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: warningRange
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6473785527917729010, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: playerMonster
@@ -995,7 +995,7 @@ PrefabInstance:
       objectReference: {fileID: 1714675968}
     - target: {fileID: 6563820704139410983, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: warningRange
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6563820704139410983, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: playerMonster
@@ -1003,7 +1003,7 @@ PrefabInstance:
       objectReference: {fileID: 1714675968}
     - target: {fileID: 7195503931857127318, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: warningRange
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7195503931857127318, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: playerMonster

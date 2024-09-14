@@ -16,6 +16,10 @@ public class AudioController : MonoBehaviour
     [SerializeField] private List<AudioClip> audioClips;
     private Dictionary<string, AudioClip> audioClipDictionary;
 
+    float startingMusicVolume;
+    float startingAmbientVolume;
+    float startingSFXVolume;
+
     private void Awake()
     {
         if (Instance == null)
@@ -29,6 +33,13 @@ public class AudioController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        startingMusicVolume = musicSource.volume;
+        startingAmbientVolume = ambientSource.volume;
+        startingSFXVolume = sfxSource.volume;
     }
 
     private void InitializeAudioSources()
@@ -134,5 +145,19 @@ public class AudioController : MonoBehaviour
     {
         AudioSource source = GetAudioSourceByType(sourceType);
         StartCoroutine(FadeIn(source));
+    }
+
+    public void AudioOff()
+    {
+        ambientSource.volume = 0;
+        musicSource.volume = 0;
+        sfxSource.volume = 0;
+    }
+
+    public void AudioOn()
+    {
+        musicSource.volume = startingMusicVolume;
+        ambientSource.volume = startingAmbientVolume;
+        sfxSource.volume = startingSFXVolume;
     }
 }
