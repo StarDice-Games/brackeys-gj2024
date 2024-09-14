@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9185b7d000891468cd7426d8b4ec35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 9
   anchorPoint: {fileID: 4283517159654434213}
   maxItems: 1
   currentItems: []
