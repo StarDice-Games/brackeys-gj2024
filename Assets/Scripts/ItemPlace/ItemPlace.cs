@@ -10,7 +10,7 @@ public class ItemPlace : MonoBehaviour, IInteractable
     [SerializeField] int maxItems;
     [SerializeField] List<Item> currentItems;
 
-    [SerializeField] Color greenColor, redColor;
+    [SerializeField] Color itemHighlight;
 
     public eItemType ItemType { get => itemType; }
     public bool IsInteractable { get; set; }
@@ -35,25 +35,6 @@ public class ItemPlace : MonoBehaviour, IInteractable
             HideCheckItemSprite();
             return;
         }
-
-        if (collision.CompareTag("InteractionDetector"))
-        {
-            if (collision.transform.parent.parent.TryGetComponent(out InteractionDetector interactorDetector))
-            {
-                if (interactorDetector.GrabbedItem)
-                {
-                    UpdateVisual(interactorDetector.GrabbedItem);
-                }
-            }
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("InteractionDetector"))
-        {
-            HideCheckItemSprite();
-        }
     }
 
     public void HideCheckItemSprite()
@@ -64,18 +45,11 @@ public class ItemPlace : MonoBehaviour, IInteractable
         }
     }
 
-    public void UpdateVisual(Item item)
+    public void HighlightPlace()
     {
         if (anchorPoint.TryGetComponent(out SpriteRenderer sprite))
         {
-            if (item.ItemSO.ItemType == ItemType)
-            {
-                sprite.color = greenColor;
-            }
-            else
-            {
-                sprite.color = redColor;
-            }
+            sprite.color = itemHighlight;
         }
     }
 

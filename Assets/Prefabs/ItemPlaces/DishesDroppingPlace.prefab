@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.62, y: -0.08, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4493080591576806920}
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.439272, g: 0.8584906, b: 0.22272164, a: 0}
+  m_Sprite: {fileID: 745101283, guid: 70537ccb1c7a45648aa4a43e3f979240, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -196,4 +196,5 @@ MonoBehaviour:
   currentItems: []
   greenColor: {r: 0.18238708, g: 0.6981132, b: 0.11525452, a: 1}
   redColor: {r: 0.745283, g: 0, b: 0, a: 1}
+  itemHighlight: {r: 1, g: 1, b: 1, a: 0.39215687}
   audioClip: {fileID: 8300000, guid: 27e91f9ba79955b45b23b68b87b1a4dc, type: 3}

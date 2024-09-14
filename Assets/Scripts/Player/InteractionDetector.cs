@@ -19,6 +19,31 @@ public class InteractionDetector : MonoBehaviour
     public event Action OnHoverInteraction;
     public event Action OnExitInteraction;
 
+    ItemPlace[] itemPlaces;
+
+    private void Start()
+    {
+        itemPlaces = FindObjectsOfType<ItemPlace>();
+    }
+
+    private void Update()
+    {
+        if (grabbedItem)
+        {
+            foreach (var itemPlace in itemPlaces)
+            {
+                if (itemPlace.CanAttachItem())
+                {
+                    if (itemPlace.ItemType != grabbedItem.ItemSO.ItemType)
+                    {
+                        continue;
+                    }
+                    itemPlace.HighlightPlace();
+                }
+            }
+        }
+    }
+
     public void Interact()
     {
         if (nearestInteractable != null)
@@ -160,9 +185,18 @@ public class InteractionDetector : MonoBehaviour
                         }
 
                         grabbedItem = null;
+                        HidePlaceItemHighlights();
                     }
                 }
             }
+        }
+    }
+
+    private void HidePlaceItemHighlights()
+    {
+        foreach (var itemPlace in itemPlaces)
+        {
+            itemPlace.HideCheckItemSprite();
         }
     }
 }
