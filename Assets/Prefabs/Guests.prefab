@@ -105,9 +105,13 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 8bf40153bd59c49458400395b0bba065, type: 3}
+    - target: {fileID: 5701382169734763663, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9015942328729646461, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: warningRange
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9015942328729646461, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: isFacingRight
@@ -187,9 +191,13 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 37fe0c51873a3444c9de8eef4f62c393, type: 3}
+    - target: {fileID: 5701382169734763663, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9015942328729646461, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: warningRange
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -209,10 +217,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5396228857992774523}
     m_Modifications:
-    - target: {fileID: 948257123894620869, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 22100000, guid: c06d732bf33e3d6418bef577d8e0540d, type: 2}
     - target: {fileID: 1002729282331015451, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.77
@@ -258,12 +262,12 @@ PrefabInstance:
       value: Guest
       objectReference: {fileID: 0}
     - target: {fileID: 5701382169734763663, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: bd82b3c7f1d76d3479df6015a1a69b8b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9015942328729646461, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: warningRange
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -343,9 +347,13 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 5d92995ee3c4ac04ca1869b19d110a8c, type: 3}
+    - target: {fileID: 5701382169734763663, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9015942328729646461, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: warningRange
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9015942328729646461, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: isFacingRight
@@ -425,9 +433,13 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ce41b02c089b4894da1e2e251a7bbfcc, type: 3}
+    - target: {fileID: 5701382169734763663, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9015942328729646461, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: warningRange
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -507,9 +519,13 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e9ef5229691eca94b9552d774430991b, type: 3}
+    - target: {fileID: 5701382169734763663, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9015942328729646461, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: warningRange
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9015942328729646461, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: isFacingRight

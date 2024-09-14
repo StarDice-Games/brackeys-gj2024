@@ -186,7 +186,7 @@ TextureImporter:
         width: 8
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,6 +194,27 @@ TextureImporter:
       bones: []
       spriteID: 1a088d300150caa418110f02a53fcb43
       internalID: 201406690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gdb-keyboard-2_3
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 488
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72e591219fe37dd41848f9d37468b22c
+      internalID: 737951896
       vertices: []
       indices: 
       edges: []
@@ -212,6 +233,7 @@ TextureImporter:
       gdb-keyboard-2_0: -1597256840
       gdb-keyboard-2_1: 609789651
       gdb-keyboard-2_2: 201406690
+      gdb-keyboard-2_3: 737951896
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

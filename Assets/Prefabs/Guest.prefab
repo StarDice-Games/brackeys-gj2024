@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8b2b70eb76852c14992a1d07024685b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd82b3c7f1d76d3479df6015a1a69b8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 4685058913105213283}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: c06d732bf33e3d6418bef577d8e0540d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -156,8 +156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c9b9dc0659b847428663c7681d1f104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  warningRange: 10
-  maxVelocity: 2.5
+  warningRange: 5
+  maxVelocity: 3.5
   maxForce: 10
   playerMonster: {fileID: 0}
   isFacingRight: 1

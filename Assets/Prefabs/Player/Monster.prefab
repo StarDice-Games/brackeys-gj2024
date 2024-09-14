@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2571d2af8dc6a6349bd58e6c1c7e0045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4.2
+  moveSpeed: 3
   childToFlip: {fileID: 2351850577882582825}
 --- !u!114 &1521863924113176886
 MonoBehaviour:

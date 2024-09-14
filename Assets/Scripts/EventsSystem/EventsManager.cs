@@ -33,6 +33,7 @@ public class EventsManager : MonoBehaviour
 
     [Header("MainDoor")]
     [SerializeField] Item mainDoor;
+    [SerializeField] GameObject arrowIndicator;
 
     [Header("Tasks")]
     [SerializeField] GameObject taskUI;
@@ -105,13 +106,13 @@ public class EventsManager : MonoBehaviour
         yield return new WaitForSeconds(timeBetweenEvents);
         Debug.Log("OnEndGame");
         OnEndGame?.Invoke();
-        yield return new WaitForSeconds(timeBetweenEvents * 2f);
+        yield return new WaitForSeconds(timeBetweenEvents);
         Debug.Log("OnBeforeShowCredits");
         OnBeforeShowCredits?.Invoke();
-        yield return new WaitForSeconds(timeBetweenEvents);
+        yield return new WaitForSeconds(3f);
         Debug.Log("OnShowCredits");
         OnShowCredits?.Invoke();
-        yield return new WaitForSeconds(timeBetweenEvents);
+        yield return new WaitForSeconds(timeBetweenEvents * 2);
         Debug.Log("OnEndShowCredits");
         OnEndShowCredits?.Invoke();
         yield return new WaitForSeconds(timeBetweenEvents * 2); // should be double of timeBeweenEvents
@@ -215,6 +216,11 @@ public class EventsManager : MonoBehaviour
     public void PlayOnDoorClosed()
     {
         AudioController.Instance.PlaySound(closedDoorSFX.name, true, "sfx");
+    }
+
+    public void ToggleArrowIndicator(bool isActive)
+    {
+        arrowIndicator.SetActive(isActive);
     }
 
     public void ToggleMainDoor(bool isOpen)

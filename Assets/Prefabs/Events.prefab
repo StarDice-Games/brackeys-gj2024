@@ -366,7 +366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
       propertyPath: OnDoorOpen.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
       propertyPath: OnStartGame.m_PersistentCalls.m_Calls.Array.size
@@ -425,6 +425,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
+      propertyPath: OnDoorOpen.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
       propertyPath: OnEndGame.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4007465458139262641}
@@ -457,6 +461,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4007465458139262641}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
+      propertyPath: OnDoorOpen.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 4007465458139262641}
+    - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
       propertyPath: OnGuestsEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -466,7 +474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
       propertyPath: OnInitialTasksCompleted.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
       propertyPath: OnSecondPhase.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -550,6 +558,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
       propertyPath: OnDoorOpen.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
+      propertyPath: OnDoorOpen.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
@@ -639,6 +651,10 @@ PrefabInstance:
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
       propertyPath: OnDoorOpen.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: DisablePlayerController
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
+      propertyPath: OnDoorOpen.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ToggleArrowIndicator
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
       propertyPath: OnEndShowCredits.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -921,6 +937,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
+      propertyPath: OnInitialTasksCompleted.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
       propertyPath: OnBeforeShowCredits.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -941,6 +961,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4007465458139262641}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
+      propertyPath: OnInitialTasksCompleted.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 4007465458139262641}
+    - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
       propertyPath: OnEndGame.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: EventsManager, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -954,6 +978,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
       propertyPath: OnDoorOpen.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: EventsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
+      propertyPath: OnDoorOpen.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: EventsManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
@@ -973,6 +1001,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
+      propertyPath: OnInitialTasksCompleted.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
       propertyPath: OnInitialTasksCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ToggleMainDoor
       objectReference: {fileID: 0}
@@ -987,6 +1019,10 @@ PrefabInstance:
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
       propertyPath: OnInitialTasksCompleted.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
       value: ToggleInitialTaskContainerTask
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
+      propertyPath: OnInitialTasksCompleted.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: ToggleArrowIndicator
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
       propertyPath: OnStartGame.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1018,6 +1054,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
       propertyPath: OnDoorOpen.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
+      propertyPath: OnDoorOpen.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_FloatArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
@@ -1213,11 +1253,19 @@ PrefabInstance:
       value: EventsManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
+      propertyPath: OnInitialTasksCompleted.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: EventsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
       propertyPath: OnInitialTasksCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
       propertyPath: OnInitialTasksCompleted.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
+      propertyPath: OnInitialTasksCompleted.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
@@ -1234,6 +1282,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
       propertyPath: OnDoorOpen.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
+      propertyPath: OnDoorOpen.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
@@ -1358,6 +1410,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
       propertyPath: OnInitialTasksCompleted.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163596868352530141, guid: f400dde3ebde2c4459fec3eeb2ebc88e, type: 3}
+      propertyPath: OnInitialTasksCompleted.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
