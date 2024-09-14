@@ -13,6 +13,8 @@ public class Item : MonoBehaviour, IInteractable
 
     private bool completed = false;
 
+    [SerializeField] AudioClip audioClip;
+
     [HideInInspector]
     public Task associatedTask;
 
@@ -33,6 +35,8 @@ public class Item : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        AudioController.Instance.PlaySound(audioClip.name, true, "sfx");
+
         switch (itemSO.InteractionType)
         {
             case eInteractionType.Static:

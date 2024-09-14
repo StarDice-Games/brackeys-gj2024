@@ -15,6 +15,8 @@ public class ItemPlace : MonoBehaviour, IInteractable
     public eItemType ItemType { get => itemType; }
     public bool IsInteractable { get; set; }
 
+    [SerializeField] AudioClip audioClip;
+
     public bool CanAttachItem()
     {
         return currentItems.Count < maxItems;
@@ -84,6 +86,7 @@ public class ItemPlace : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        AudioController.Instance.PlaySound(audioClip.name, true, "sfx");
     }
 
     public void HoverInteract()

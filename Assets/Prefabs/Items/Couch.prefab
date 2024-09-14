@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSO: {fileID: 11400000, guid: e8530f7f6ff47ca48a4c30d9295e5919, type: 2}
+  audioClip: {fileID: 8300000, guid: d638368e59f8c5040b12f1cf20f92610, type: 3}
   associatedTask: {fileID: 0}
 --- !u!50 &4557725891812191853
 Rigidbody2D:
