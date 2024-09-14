@@ -12,7 +12,7 @@ public class Agent : MonoBehaviour
     private Rigidbody2D rb;
     private Item item;
 
-    private Transform player;
+    [SerializeField] Transform playerMonster;
 
     private Vector2 desiredVelocity;
     private Vector2 steeringVelocity;
@@ -43,12 +43,11 @@ public class Agent : MonoBehaviour
         }
     }
 
-
     private void FixedUpdate()
     {
-        Debug.Log("rb.velocity " + rb.velocity);
-        Debug.Log("desiredVelocity " + desiredVelocity);
-        Debug.Log("steeringVelocity " + desiredVelocity);
+        /*        Debug.Log("rb.velocity " + rb.velocity);
+                Debug.Log("desiredVelocity " + desiredVelocity);
+                Debug.Log("steeringVelocity " + desiredVelocity);*/
 
         animationHandler.SetIsMoving(rb.velocity != Vector2.zero);
 
@@ -63,22 +62,22 @@ public class Agent : MonoBehaviour
 
         HandleFlip(rb.velocity.normalized);
 
-        RaycastHit2D warningCircleHit = Physics2D.CircleCast(transform.position, warningRange, Vector2.right);
+      /*  RaycastHit2D warningCircleHit = Physics2D.CircleCast(transform.position, warningRange, player.position - transform.position);
         if (warningCircleHit)
         {
             if (warningCircleHit.transform.gameObject.CompareTag("Player"))
             {
-                player = warningCircleHit.transform;
+                playerMonster = warningCircleHit.transform;
             }
             else
             {
-                player = null;
+                playerMonster = null;
             }
-        }
+        }*/
 
-        if (player)
+        if (playerMonster)
         {
-            if (Vector2.Distance(transform.position, player.position) < warningRange)
+            if (Vector2.Distance(transform.position, playerMonster.position) < warningRange)
             {
                 Flee();
                 return;
@@ -88,7 +87,7 @@ public class Agent : MonoBehaviour
 
     private void Flee()
     {
-        desiredVelocity = (transform.position - player.position).normalized;
+        desiredVelocity = (transform.position - playerMonster.position).normalized;
         desiredVelocity *= maxVelocity;
 
         steeringVelocity = desiredVelocity - rb.velocity;

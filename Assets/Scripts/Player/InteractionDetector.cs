@@ -65,6 +65,11 @@ public class InteractionDetector : MonoBehaviour
                     if (grabbedItem == null)
                     {
                         nearestInteractable.Interact();
+
+                        if (item.ItemSO.ItemType == eItemType.Guest)
+                        {
+                            GetComponent<PlayerController>().MonsterAttack();
+                        }
                     }
                 }
             }

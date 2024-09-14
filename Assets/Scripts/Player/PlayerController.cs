@@ -96,8 +96,8 @@ public class PlayerController : MonoBehaviour
         rigidBody.angularDrag = 0;
     }
 
-    private void MonsterTransformation()
+    public void MonsterAttack()
     {
-
+        StartCoroutine(animHandler.SetAttackTrigger());
     }
 }
