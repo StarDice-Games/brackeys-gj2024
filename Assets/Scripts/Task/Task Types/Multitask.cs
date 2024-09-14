@@ -29,6 +29,7 @@ public class MultiTask : Task
 
         if (allCompleted)
         {
+            Debug.Log("MultiTask " + gameObject.name + " completed");
             CompleteTask();
         }
     }
