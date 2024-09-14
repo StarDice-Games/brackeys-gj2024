@@ -27,6 +27,8 @@ public class EventsManager : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] AudioClip cozyMainTrack;
+    [SerializeField] AudioClip monsterMainTrack;
+    [SerializeField] AudioClip stormTrack;
 
     public UnityEvent OnStartGame, OnMainTaskCompleted, OnDoorOpen, OnGuestsEnter, OnDoorClosed, OnSecondPhase, OnStartEndGame, OnMiddleEndGame, OnEndGame;
 
@@ -164,5 +166,20 @@ public class EventsManager : MonoBehaviour
     public void PlayCozyMainTrack()
     {
         AudioController.Instance.PlaySound(cozyMainTrack.name, false, "music", 0.05f);
+    }
+
+    public void PlayMonsterMainTrack()
+    {
+        AudioController.Instance.PlaySound(monsterMainTrack.name, false, "music", 0.2f);
+    }
+
+    public void PlayStormTrack()
+    {
+        AudioController.Instance.PlaySound(stormTrack.name, false, "ambient", 0.2f);
+    }
+
+    public void StopStormTrack()
+    {
+        AudioController.Instance.StopSound("ambient");
     }
 }

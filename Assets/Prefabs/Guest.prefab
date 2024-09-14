@@ -136,6 +136,7 @@ MonoBehaviour:
   warningRange: 3.5
   maxVelocity: 2.5
   maxForce: 10
+  isFacingRight: 1
 --- !u!61 &6171516191327480521
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -266,5 +267,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSO: {fileID: 11400000, guid: 3862f52fc0c1c3a44ba75af2d0fc70e8, type: 2}
-  spriteRenderer: {fileID: 5701382169734763663}
+  audioClip: {fileID: 8300000, guid: 3928e790b0725de4b81d78057d778be4, type: 3}
   associatedTask: {fileID: 0}

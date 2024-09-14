@@ -3,6 +3,7 @@ using UnityEngine;
 public class FlashVFX : MonoBehaviour
 {
     [SerializeField] Animator animator;
+    [SerializeField] AudioClip audioClip;
 
     private void Awake()
     {
@@ -15,6 +16,6 @@ public class FlashVFX : MonoBehaviour
 
     void OnThunder()
     {
-        Debug.Log("Play thunder SFX");
+        AudioController.Instance.PlaySound(audioClip.name, true, "sfx");
     }
 }
