@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 15_Guest 6
   m_EditorClassIdentifier: 
   itemName: Guest
-  interactedSprite: {fileID: -685597319, guid: 70537ccb1c7a45648aa4a43e3f979240, type: 3}
+  interactedSprite: {fileID: -1504539094, guid: 70537ccb1c7a45648aa4a43e3f979240, type: 3}
   itemType: 10
   interactionType: 0

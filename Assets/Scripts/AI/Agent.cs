@@ -125,6 +125,9 @@ public class Agent : MonoBehaviour
             }
         }
 
+        GetComponentInChildren<Animator>().enabled = false;
+        GetComponentInChildren<SpriteRenderer>().sprite = item.ItemSO.InteractedSprite;
+
         rb.velocity = Vector2.zero;
         desiredVelocity = Vector2.zero;
         steeringVelocity = Vector2.zero;

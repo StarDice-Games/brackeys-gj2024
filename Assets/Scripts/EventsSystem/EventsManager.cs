@@ -72,10 +72,12 @@ public class EventsManager : MonoBehaviour
         if (!monsterController.gameObject.activeInHierarchy)
         {
             monsterController.transform.position = playerController.transform.position;
+            monsterController.transform.localScale = playerController.transform.localScale;
         }
         else
         {
             playerController.transform.position = monsterController.transform.position;
+            playerController.transform.localScale = monsterController.transform.localScale;
         }
     }
 

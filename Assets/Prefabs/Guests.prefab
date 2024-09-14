@@ -45,6 +45,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5396228857992774523}
     m_Modifications:
+    - target: {fileID: 948257123894620869, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 3a5c1ccacb83d3344acb435268b9a138, type: 2}
     - target: {fileID: 1002729282331015451, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
@@ -89,9 +93,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2440158418616637768, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: itemSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 379d28a5c76356d418be8a718a5fe685, type: 2}
     - target: {fileID: 5692740859790856723, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: m_Name
       value: Guest (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701382169734763663, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8bf40153bd59c49458400395b0bba065, type: 3}
+    - target: {fileID: 9015942328729646461, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: warningRange
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9015942328729646461, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: isFacingRight
@@ -115,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5396228857992774523}
     m_Modifications:
+    - target: {fileID: 948257123894620869, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 8a82468a61a262e4b9ae818d914a2849, type: 2}
     - target: {fileID: 1002729282331015451, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.77
@@ -155,9 +175,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2440158418616637768, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: itemSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 087c5558defb4704784e349004ac3dfd, type: 2}
     - target: {fileID: 5692740859790856723, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: m_Name
       value: Guest (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701382169734763663, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 37fe0c51873a3444c9de8eef4f62c393, type: 3}
+    - target: {fileID: 9015942328729646461, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: warningRange
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -177,6 +209,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5396228857992774523}
     m_Modifications:
+    - target: {fileID: 948257123894620869, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: c06d732bf33e3d6418bef577d8e0540d, type: 2}
     - target: {fileID: 1002729282331015451, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.77
@@ -221,6 +257,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Guest
       objectReference: {fileID: 0}
+    - target: {fileID: 5701382169734763663, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bd82b3c7f1d76d3479df6015a1a69b8b, type: 3}
+    - target: {fileID: 9015942328729646461, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: warningRange
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -239,6 +283,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5396228857992774523}
     m_Modifications:
+    - target: {fileID: 948257123894620869, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: da1fe2f6fb6ff3c40acb53a48cb80500, type: 2}
     - target: {fileID: 1002729282331015451, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
@@ -283,9 +331,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2440158418616637768, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: itemSO
+      value: 
+      objectReference: {fileID: 11400000, guid: b3228efca83d4f94f9c9d2c48a450f21, type: 2}
     - target: {fileID: 5692740859790856723, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: m_Name
       value: Guest (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701382169734763663, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5d92995ee3c4ac04ca1869b19d110a8c, type: 3}
+    - target: {fileID: 9015942328729646461, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: warningRange
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9015942328729646461, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: isFacingRight
@@ -309,6 +369,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5396228857992774523}
     m_Modifications:
+    - target: {fileID: 948257123894620869, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: ea70f81bf0855554aa128eae08711773, type: 2}
     - target: {fileID: 1002729282331015451, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.79
@@ -349,9 +413,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2440158418616637768, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: itemSO
+      value: 
+      objectReference: {fileID: 11400000, guid: d35c601f150d3f746ac64bfdd46acc36, type: 2}
     - target: {fileID: 5692740859790856723, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: m_Name
       value: Guest (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701382169734763663, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ce41b02c089b4894da1e2e251a7bbfcc, type: 3}
+    - target: {fileID: 9015942328729646461, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: warningRange
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -371,6 +447,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5396228857992774523}
     m_Modifications:
+    - target: {fileID: 948257123894620869, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 83b811089dfd7114180a6e8d09eaae54, type: 2}
     - target: {fileID: 1002729282331015451, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
@@ -415,9 +495,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2440158418616637768, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: itemSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 1b6a4b353d3b09f4abf238e5adde0af7, type: 2}
     - target: {fileID: 5692740859790856723, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: m_Name
       value: Guest (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701382169734763663, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e9ef5229691eca94b9552d774430991b, type: 3}
+    - target: {fileID: 9015942328729646461, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: warningRange
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9015942328729646461, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: isFacingRight
