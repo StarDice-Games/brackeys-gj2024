@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 public class UIController : MonoBehaviour
 {
-    [SerializeField] private List<Slider> taskProgressBars;
-    [SerializeField] private List<Text> taskDescriptions;
-    [SerializeField] private List<Text> taskProgressTexts;
+    [SerializeField] private List<Image> taskProgressBars;
+    [SerializeField] private List<TextMeshProUGUI> taskDescriptions;
+    [SerializeField] private List<TextMeshProUGUI> taskProgressTexts;
     [SerializeField] private TaskManager taskManager;
 
     private void Start()
@@ -27,7 +28,7 @@ public class UIController : MonoBehaviour
         {
             Task task = allTasks[i];
             float progress = task.GetCompletedObjectives() / (float)task.GetTotalObjectives();
-            taskProgressBars[i].value = progress;
+            taskProgressBars[i].fillAmount = progress;
             taskProgressTexts[i].text = $"{task.GetCompletedObjectives()} / {task.GetTotalObjectives()}";
 
             if (task is MultiTask multiTask)
