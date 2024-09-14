@@ -39,7 +39,10 @@ public class EventsManager : MonoBehaviour
     [SerializeField] GameObject welcomeGuestsTask, haveDinnerTask;
     [SerializeField] GameObject initialTaskContainer;
 
-    public UnityEvent OnStartGame, OnInitialTasksCompleted, OnDoorOpen, OnGuestsEnter, OnDoorClosed, OnSecondPhase, OnStartEndGame, OnMiddleEndGame, OnEndGame;
+    [Header("Credits")]
+    [SerializeField] GameObject creditsUI;
+
+    public UnityEvent OnStartGame, OnInitialTasksCompleted, OnDoorOpen, OnGuestsEnter, OnDoorClosed, OnSecondPhase, OnStartEndGame, OnMiddleEndGame, OnEndGame, OnBeforeShowCredits, OnShowCredits, OnEndShowCredits, OnBackMainMenu;
     public static EventsManager Instance;
 
 
@@ -94,11 +97,26 @@ public class EventsManager : MonoBehaviour
 
     public IEnumerator StartingEndGame()
     {
+        Debug.Log("OnStartEndGame");
         OnStartEndGame?.Invoke();
         yield return new WaitForSeconds(timeBetweenEvents);
+        Debug.Log("OnMiddleEndGame");
         OnMiddleEndGame?.Invoke();
         yield return new WaitForSeconds(timeBetweenEvents);
+        Debug.Log("OnEndGame");
         OnEndGame?.Invoke();
+        yield return new WaitForSeconds(timeBetweenEvents * 2f);
+        Debug.Log("OnBeforeShowCredits");
+        OnBeforeShowCredits?.Invoke();
+        yield return new WaitForSeconds(timeBetweenEvents);
+        Debug.Log("OnShowCredits");
+        OnShowCredits?.Invoke();
+        yield return new WaitForSeconds(timeBetweenEvents);
+        Debug.Log("OnEndShowCredits");
+        OnEndShowCredits?.Invoke();
+        yield return new WaitForSeconds(timeBetweenEvents * 2); // should be double of timeBeweenEvents
+        Debug.Log("OnBackMainMenu");
+        OnBackMainMenu?.Invoke();
     }
 
     public void EnableAgents()
@@ -222,5 +240,10 @@ public class EventsManager : MonoBehaviour
     public void ToggleTaskUI(bool isActive)
     {
         taskUI.SetActive(isActive);
+    }
+
+    public void ToggleCreditsScreen(bool isActive)
+    {
+        creditsUI.SetActive(isActive);
     }
 }
