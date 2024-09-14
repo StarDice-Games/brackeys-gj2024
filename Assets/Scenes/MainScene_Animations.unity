@@ -340,7 +340,7 @@ PrefabInstance:
     - target: {fileID: 4007465458139262641, guid: 707969d6022067f489e78de03d869990, type: 3}
       propertyPath: monsterController
       value: 
-      objectReference: {fileID: 8765642543781333468}
+      objectReference: {fileID: 8765642543781333473}
     - target: {fileID: 4007465458139262641, guid: 707969d6022067f489e78de03d869990, type: 3}
       propertyPath: guests.Array.data[0]
       value: 
@@ -2850,6 +2850,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainScene
       objectReference: {fileID: 0}
+    - target: {fileID: 3942562371589256024, guid: f684a293663791548a1d1c5889447e2f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2870,11 +2874,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9201233737173878110, guid: f684a293663791548a1d1c5889447e2f, type: 3}
   m_PrefabInstance: {fileID: 4638185063815569151}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8765642543781333468 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5333619403245858877, guid: 4272fadeda8f05a47b0f816a9de90ea8, type: 3}
+--- !u!114 &8765642543781333473 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2760034531323770715, guid: 4272fadeda8f05a47b0f816a9de90ea8, type: 3}
   m_PrefabInstance: {fileID: 4371795673111079239}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2571d2af8dc6a6349bd58e6c1c7e0045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
