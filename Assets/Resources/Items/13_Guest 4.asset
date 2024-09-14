@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7480faeb7e4c704aacd000ec8c6a8ed, type: 3}
-  m_Name: 10_Guest
+  m_Name: 13_Guest 4
   m_EditorClassIdentifier: 
   itemName: Guest
-  interactedSprite: {fileID: -272967088, guid: 70537ccb1c7a45648aa4a43e3f979240, type: 3}
+  interactedSprite: {fileID: -1695091685, guid: 70537ccb1c7a45648aa4a43e3f979240, type: 3}
   itemType: 10
   interactionType: 0
