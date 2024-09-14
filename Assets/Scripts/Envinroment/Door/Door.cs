@@ -7,10 +7,13 @@ public class Door : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.TryGetComponent(out PlayerController playerController))
         {
-            other.transform.position = spawnPoint.position;
-            Camera.main.GetComponent<CameraController>().MoveToRoom(roomCenter);
+            if (playerController)
+            {
+                other.transform.position = spawnPoint.position;
+                Camera.main.GetComponent<CameraController>().MoveToRoom(roomCenter);
+            }
         }
 
         if (other.CompareTag("Guest"))

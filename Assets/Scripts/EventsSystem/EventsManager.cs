@@ -25,7 +25,7 @@ public class EventsManager : MonoBehaviour
 
     [SerializeField] float timeBetweenEvents = 5f;
 
-    public UnityEvent OnStartGame, OnMainTaskCompleted, OnDoorOpen, OnGuestsEnter, OnSecondPhase;
+    public UnityEvent OnStartGame, OnMainTaskCompleted, OnDoorOpen, OnGuestsEnter, OnSecondPhase, OnEndGame;
 
     public static EventsManager Instance;
 
@@ -52,7 +52,8 @@ public class EventsManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            OnSecondPhase?.Invoke();
+            StartCoroutine(StartingEndGame());
+
         }
 
         if (!monsterController.activeInHierarchy)
@@ -68,6 +69,15 @@ public class EventsManager : MonoBehaviour
         OnGuestsEnter?.Invoke();
         yield return new WaitForSeconds(timeBetweenEvents);
         OnSecondPhase?.Invoke();
+    }
+
+    IEnumerator StartingEndGame()
+    {
+        ScreenFadeOut(3f);
+        yield return new WaitForSeconds(timeBetweenEvents);
+        SwapPlayerToMonster(false);
+        yield return new WaitForSeconds(timeBetweenEvents);
+        ScreenFadeIn(2f);
     }
 
     public void EnableAgents()
