@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warningRange: 5
-  maxVelocity: 3.5
+  maxVelocity: 3
   maxForce: 10
   playerMonster: {fileID: 0}
   isFacingRight: 1
@@ -250,7 +250,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.5}
+  m_Size: {x: 2, y: 1.5}
   m_EdgeRadius: 0
 --- !u!50 &7410015315560002714
 Rigidbody2D:

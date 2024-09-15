@@ -257,6 +257,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2324201063600786597, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
+      propertyPath: m_Size.x
+      value: 1.71
+      objectReference: {fileID: 0}
     - target: {fileID: 5692740859790856723, guid: 8bdcc85a56a806f4db184de3ec0a26a0, type: 3}
       propertyPath: m_Name
       value: Guest
