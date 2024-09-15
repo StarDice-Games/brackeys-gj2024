@@ -267,7 +267,7 @@ public class EventsManager : MonoBehaviour
 
     public void ToggleMouseCursor(bool isActive)
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = isActive ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = isActive;
     }
 }
