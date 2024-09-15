@@ -62,8 +62,6 @@ public class InteractionDetector : MonoBehaviour
                 {
                     if (grabbedItem == null)
                     {
-                        Debug.Log(gameObject.name + " Interact with nearestInteractable " + nearestInteractable.ToString());
-                        Debug.Log(gameObject.name + " Interact with " + item.name);
                         nearestInteractable.Interact();
 
                         if (item.ItemSO.ItemType == eItemType.Guest)
