@@ -65,7 +65,7 @@ public class Item : MonoBehaviour, IInteractable
             associatedTask.CheckCompletion();
         }
 
-        this.enabled = false;
+        this.enabled = false; // static object still detected interactable, disable Script to avoid this behaviour
     }
 
     private void InteractWithStaticObject()
