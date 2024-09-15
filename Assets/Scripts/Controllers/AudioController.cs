@@ -40,6 +40,8 @@ public class AudioController : MonoBehaviour
         startingMusicVolume = musicSource.volume;
         startingAmbientVolume = ambientSource.volume;
         startingSFXVolume = sfxSource.volume;
+
+        PlaySound("mx_cozy-piano-jam", false, "music", 0.05f);
     }
 
     private void InitializeAudioSources()
@@ -156,7 +158,7 @@ public class AudioController : MonoBehaviour
 
     public void AudioOn()
     {
-        musicSource.volume = startingMusicVolume;
+        musicSource.volume = 0.05f;
         ambientSource.volume = startingAmbientVolume;
         sfxSource.volume = startingSFXVolume;
     }
