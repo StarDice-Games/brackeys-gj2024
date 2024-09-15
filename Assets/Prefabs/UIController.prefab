@@ -63,3 +63,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   taskManager: {fileID: 0}
+  taskAudioClip: {fileID: 8300000, guid: d554823297542c141857bce8b049a2b8, type: 3}
