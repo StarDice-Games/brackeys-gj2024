@@ -117,7 +117,7 @@ public class EventsManager : MonoBehaviour
         yield return new WaitForSeconds(timeBetweenEvents * 2);
         Debug.Log("OnEndShowCredits");
         OnEndShowCredits?.Invoke();
-        yield return new WaitForSeconds(timeBetweenEvents * 2); // should be double of timeBeweenEvents
+        yield return new WaitForSeconds(4f); // should be double of timeBeweenEvents
         Debug.Log("OnBackMainMenu");
         OnBackMainMenu?.Invoke();
     }
@@ -193,6 +193,16 @@ public class EventsManager : MonoBehaviour
     {
         playerController.gameObject.SetActive(!isMonster);
         monsterController.gameObject.SetActive(isMonster);
+    }
+
+    public void FadeInSoundtrack()
+    {
+        AudioController.Instance.FadeInSound("music");
+    }
+
+    public void FadeOutSoundtrack()
+    {
+        AudioController.Instance.FadeOutSound("music");
     }
 
     public void PlayCozyMainTrack()

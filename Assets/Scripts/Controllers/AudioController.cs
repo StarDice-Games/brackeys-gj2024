@@ -127,10 +127,12 @@ public class AudioController : MonoBehaviour
 
     private IEnumerator FadeIn(AudioSource source)
     {
+        float initialSourceVolume = source.volume;
+
         source.volume = 0;
         source.Play();
 
-        while (source.volume < 1)
+        while (source.volume < initialSourceVolume)
         {
             source.volume += Time.deltaTime / fadeDuration;
             yield return null;
