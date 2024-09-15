@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 lastPosition;
 
     private bool isFacingRight = true;
+    public bool IsFacingRight { get => isFacingRight; set => isFacingRight = value; }
 
     private InputController inputController;
     private Rigidbody2D rigidBody;
@@ -79,7 +80,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Flip()
+    public void Flip()
     {
         isFacingRight = !isFacingRight;
 

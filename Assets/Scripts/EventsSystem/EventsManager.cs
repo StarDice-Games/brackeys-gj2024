@@ -219,6 +219,11 @@ public class EventsManager : MonoBehaviour
         AudioController.Instance.PlaySound(closedDoorSFX.name, true, "sfx");
     }
 
+    public void FlipMonster()
+    {
+        monsterController.Flip();
+    }
+
     public void ToggleArrowIndicator(bool isActive)
     {
         arrowIndicator.SetActive(isActive);
