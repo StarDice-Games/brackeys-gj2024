@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
+using static UnityEngine.Timeline.AnimationPlayableAsset;
 
 public class EventsManager : MonoBehaviour
 {
@@ -30,6 +30,7 @@ public class EventsManager : MonoBehaviour
     [SerializeField] AudioClip cozyMainTrack;
     [SerializeField] AudioClip monsterMainTrack;
     [SerializeField] AudioClip stormTrack;
+    [SerializeField] AudioClip mainMenuTrack;
     [SerializeField] AudioClip closedDoorSFX;
 
     [Header("MainDoor")]
@@ -199,6 +200,11 @@ public class EventsManager : MonoBehaviour
         AudioController.Instance.PlaySound(cozyMainTrack.name, false, "music", 0.05f);
     }
 
+    public void PlayMainMenuTrack()
+    {
+        AudioController.Instance.PlaySound(mainMenuTrack.name, false, "music", 0.05f);
+    }
+
     public void PlayMonsterMainTrack()
     {
         AudioController.Instance.PlaySound(monsterMainTrack.name, false, "music", 0.2f);
@@ -261,6 +267,7 @@ public class EventsManager : MonoBehaviour
 
     public void ToggleMouseCursor(bool isActive)
     {
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = isActive;
     }
 }

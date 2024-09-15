@@ -507,57 +507,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1139983792}
     - target: {fileID: 4007465458139262641, guid: 707969d6022067f489e78de03d869990, type: 3}
-      propertyPath: OnSecondPhase.m_PersistentCalls.m_Calls.Array.size
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4007465458139262641, guid: 707969d6022067f489e78de03d869990, type: 3}
       propertyPath: OnDoorClosed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 6194255445226019701}
-    - target: {fileID: 4007465458139262641, guid: 707969d6022067f489e78de03d869990, type: 3}
-      propertyPath: OnSecondPhase.m_PersistentCalls.m_Calls.Array.data[10].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4007465458139262641, guid: 707969d6022067f489e78de03d869990, type: 3}
       propertyPath: OnBackMainMenu.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 423387503}
     - target: {fileID: 4007465458139262641, guid: 707969d6022067f489e78de03d869990, type: 3}
-      propertyPath: OnSecondPhase.m_PersistentCalls.m_Calls.Array.data[10].m_Target
-      value: 
-      objectReference: {fileID: 435563729}
-    - target: {fileID: 4007465458139262641, guid: 707969d6022067f489e78de03d869990, type: 3}
-      propertyPath: OnSecondPhase.m_PersistentCalls.m_Calls.Array.data[10].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4007465458139262641, guid: 707969d6022067f489e78de03d869990, type: 3}
-      propertyPath: OnSecondPhase.m_PersistentCalls.m_Calls.Array.data[10].m_MethodName
-      value: FlipMonster
-      objectReference: {fileID: 0}
-    - target: {fileID: 4007465458139262641, guid: 707969d6022067f489e78de03d869990, type: 3}
       propertyPath: OnInitialTasksCompleted.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 6194255445226019701}
-    - target: {fileID: 4007465458139262641, guid: 707969d6022067f489e78de03d869990, type: 3}
-      propertyPath: OnSecondPhase.m_PersistentCalls.m_Calls.Array.data[10].m_TargetAssemblyTypeName
-      value: EventsManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4007465458139262641, guid: 707969d6022067f489e78de03d869990, type: 3}
-      propertyPath: OnSecondPhase.m_PersistentCalls.m_Calls.Array.data[10].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4007465458139262641, guid: 707969d6022067f489e78de03d869990, type: 3}
-      propertyPath: OnEndShowCredits.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4007465458139262641, guid: 707969d6022067f489e78de03d869990, type: 3}
-      propertyPath: OnSecondPhase.m_PersistentCalls.m_Calls.Array.data[10].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6912747017434559318, guid: 707969d6022067f489e78de03d869990, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7345429214743616805, guid: 707969d6022067f489e78de03d869990, type: 3}
       propertyPath: m_Name
       value: Events
@@ -1615,17 +1575,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50338e2e01efaf54da5b93af8e78c384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &435563729 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4007465458139262641, guid: 707969d6022067f489e78de03d869990, type: 3}
-  m_PrefabInstance: {fileID: 69870320}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58d9b0e75ac0cf44ea52d2e977eaa413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &461239950

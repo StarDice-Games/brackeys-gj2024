@@ -237,7 +237,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Use WASD to move the Landlord into his Hotel.
+  m_text: 'Use WASD to move the Landlord into his Cottage.
 
     When you arrive near
     an object press E to pick it up.
@@ -248,7 +248,6 @@ MonoBehaviour:
 
     Some object need just to be cleaned or fixed, continue press
     E
-
 
 '
   m_isRightToLeft: 0
