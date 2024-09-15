@@ -16,10 +16,6 @@ public class AudioController : MonoBehaviour
     [SerializeField] private List<AudioClip> audioClips;
     private Dictionary<string, AudioClip> audioClipDictionary;
 
-    float startingMusicVolume;
-    float startingAmbientVolume;
-    float startingSFXVolume;
-
     private void Awake()
     {
         if (Instance == null)
@@ -37,10 +33,6 @@ public class AudioController : MonoBehaviour
 
     private void Start()
     {
-        startingMusicVolume = musicSource.volume;
-        startingAmbientVolume = ambientSource.volume;
-        startingSFXVolume = sfxSource.volume;
-
         PlaySound("mx_cozy-piano-jam", false, "music", 0.05f);
     }
 
@@ -153,15 +145,11 @@ public class AudioController : MonoBehaviour
 
     public void AudioOff()
     {
-        ambientSource.volume = 0;
-        musicSource.volume = 0;
-        sfxSource.volume = 0;
+        AudioListener.volume = 0;
     }
 
     public void AudioOn()
     {
-        musicSource.volume = 0.05f;
-        ambientSource.volume = startingAmbientVolume;
-        sfxSource.volume = startingSFXVolume;
+        AudioListener.volume = 1;
     }
 }
