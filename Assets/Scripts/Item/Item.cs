@@ -65,7 +65,12 @@ public class Item : MonoBehaviour, IInteractable
             associatedTask.CheckCompletion();
         }
 
-        this.enabled = false; // static object still detected interactable, disable Script to avoid this behaviour
+        if (GetComponent<BoxCollider2D>().isTrigger)
+        {
+            GetComponent<BoxCollider2D>().enabled = false;
+        }
+        // static object still detected interactable, disable Script to avoid this behaviour
+        this.enabled = false;
     }
 
     private void InteractWithStaticObject()

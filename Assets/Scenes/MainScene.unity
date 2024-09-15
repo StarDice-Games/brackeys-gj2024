@@ -949,6 +949,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 560670653710007672, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 581940865570739850, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1430418786206242669, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: playerMonster
       value: 
@@ -957,6 +965,18 @@ PrefabInstance:
       propertyPath: playerMonster
       value: 
       objectReference: {fileID: 1714675968}
+    - target: {fileID: 4674110016874856384, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764007753874609429, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799215454958726703, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5396228857992774523, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: m_LocalPosition.x
       value: -50
@@ -1017,6 +1037,10 @@ PrefabInstance:
       propertyPath: playerMonster
       value: 
       objectReference: {fileID: 1714675968}
+    - target: {fileID: 8651756691588351601, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
