@@ -12,7 +12,13 @@ public class SceneController : MonoBehaviour
             instance = this;
         }
     }
+
     public void OpenCredits()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    public void OpenIntro()
     {
         SceneManager.LoadScene(2);
     }
