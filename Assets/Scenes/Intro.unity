@@ -214,7 +214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.065437436, y: 0.54340714}
   m_AnchorMax: {x: 0.93443745, y: 0.7391107}
-  m_AnchoredPosition: {x: 0, y: 1.6346283}
+  m_AnchoredPosition: {x: 1.0501709, y: 70}
   m_SizeDelta: {x: 1.7375002, y: -3.7906036}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196538371
@@ -240,14 +240,16 @@ MonoBehaviour:
   m_text: 'Use WASD to move the Landlord into his Cottage.
 
     When you arrive near
-    an object press E to pick it up.
+    an object, press E to pick it up.
 
-    Press E again to place it int the correct
+    Press E again to place it in the correct
     position.
 
+    Some objects just need to be cleaned or fixed.
 
-    Some object need just to be cleaned or fixed, continue press
-    E
+
+    To start
+    the game press E
 
 '
   m_isRightToLeft: 0
@@ -542,7 +544,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 354}
+  m_AnchoredPosition: {x: 0.93, y: 403}
   m_SizeDelta: {x: 660.5345, y: 91.292694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &838669691
