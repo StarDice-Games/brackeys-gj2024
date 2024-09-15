@@ -96,11 +96,11 @@ public class Agent : MonoBehaviour
 
     private void HandleFlip(Vector2 direction)
     {
-        if (direction.x > 0 && !isFacingRight)
+        if (direction.x > 0.3f && !isFacingRight)
         {
             Flip();
         }
-        else if (direction.x < 0 && isFacingRight)
+        else if (direction.x < -0.3f && isFacingRight)
         {
             Flip();
         }
