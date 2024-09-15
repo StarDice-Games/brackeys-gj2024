@@ -65,16 +65,16 @@ public class EventsManager : MonoBehaviour
     private void Update()
     {
 
+#if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.I))
         {
             StartCoroutine(StartingSecondPhase());
         }
-
         if (Input.GetKeyDown(KeyCode.P))
         {
             StartCoroutine(StartingEndGame());
         }
-
+#endif
         if (!monsterController.gameObject.activeInHierarchy)
         {
             monsterController.transform.position = playerController.transform.position;
