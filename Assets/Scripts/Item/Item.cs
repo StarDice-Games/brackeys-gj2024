@@ -64,6 +64,8 @@ public class Item : MonoBehaviour, IInteractable
         {
             associatedTask.CheckCompletion();
         }
+
+        this.enabled = false;
     }
 
     private void InteractWithStaticObject()

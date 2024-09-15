@@ -949,50 +949,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 292360286240495120, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 326993560917110058, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 452989364436289535, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1430418786206242669, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
-      propertyPath: maxVelocity
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1430418786206242669, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
-      propertyPath: warningRange
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 1430418786206242669, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: playerMonster
       value: 
       objectReference: {fileID: 1714675968}
     - target: {fileID: 2021342802715098271, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
-      propertyPath: maxVelocity
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2021342802715098271, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
-      propertyPath: warningRange
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2021342802715098271, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: playerMonster
       value: 
       objectReference: {fileID: 1714675968}
-    - target: {fileID: 4505191693558054478, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4707237821653714247, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5396228857992774523, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: m_LocalPosition.x
       value: -50
@@ -1033,58 +997,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5658747663324704437, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5897534768429976543, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: m_Name
       value: Guests
       objectReference: {fileID: 0}
     - target: {fileID: 6435814753693593544, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
-      propertyPath: maxVelocity
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6435814753693593544, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
-      propertyPath: warningRange
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6435814753693593544, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: playerMonster
       value: 
       objectReference: {fileID: 1714675968}
-    - target: {fileID: 6473785527917729010, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
-      propertyPath: maxVelocity
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6473785527917729010, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
-      propertyPath: warningRange
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6473785527917729010, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: playerMonster
       value: 
       objectReference: {fileID: 1714675968}
     - target: {fileID: 6563820704139410983, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
-      propertyPath: maxVelocity
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6563820704139410983, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
-      propertyPath: warningRange
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6563820704139410983, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: playerMonster
       value: 
       objectReference: {fileID: 1714675968}
-    - target: {fileID: 7195503931857127318, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
-      propertyPath: maxVelocity
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7195503931857127318, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
-      propertyPath: warningRange
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 7195503931857127318, guid: 41abbf04dd99a434dbf0c358623a6396, type: 3}
       propertyPath: playerMonster
       value: 
