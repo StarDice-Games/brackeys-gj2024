@@ -13,6 +13,23 @@ public class SceneController : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
+        if (Input.GetMouseButtonDown(0) &&
+            (SceneManager.GetActiveScene() != SceneManager.GetSceneByBuildIndex(0) &&
+            SceneManager.GetActiveScene() != SceneManager.GetSceneByBuildIndex(3)))
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+    }
+
     public void OpenCredits()
     {
         SceneManager.LoadScene(3);
